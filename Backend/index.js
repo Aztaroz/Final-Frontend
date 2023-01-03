@@ -164,8 +164,16 @@ function deleteData() {
 
 function checkAvailable() {
     console.log("function called");
-    var chkin = document.getElementById("checkin").value
-    var chkout = document.getElementById("checkout").value
+    var chkin = document.getElementById('checkin').value
+    var chkout = document.getElementById('checkout').value
+    var adult = document.getElementById('adult').value
+    var children = document.getElementById('children').value
+    var fname = document.getElementById('fname').value
+    var lname = document.getElementById('lname').value
+    var email = document.getElementById('email').value
+    var phone = document.getElementById('phone').value
+
+    // console.log(chkin);
     // var count = 0
     // fetch(url + '/location')
     //     .then(response => response.json())
@@ -180,9 +188,15 @@ function checkAvailable() {
         .then(response => response.json())
         .then(data => {
             for (const x of data) {
-                if (x['bookdate'] == ) {
-
-                }
+                console.log(x['check in']);
+                // if (x['check in'] == "2023-01-05") {
+                //     // Swal.fire({
+                //     //     icon: 'error',
+                //     //     title: 'Oops...',
+                //     //     text: 'Something went wrong!',
+                //     // })
+                    
+                // }
             }
         })
 }
