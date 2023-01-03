@@ -22,10 +22,20 @@
 	<!-- index.css -->
 	<script src="../Backend/index.js"></script>
 
+	<script>
+		// window.addEventListener("beforeunload", function(event) {
+		//   event.returnValue = "Write something clever here..";
+		// });
+		function test() {
+			return "ease"
+		}
+	</script>
+
 	<title>Home</title>
 </head>
 
-<body>
+<body onbeforeunload="return test()">
+
 	<button onclick="checkAvailable()">Test</button>
 	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00522D;">
 		<div class="container-fluid">

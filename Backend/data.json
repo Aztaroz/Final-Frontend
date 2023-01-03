@@ -1,4 +1,5 @@
 {
+    "checkAvailable": {},
     "booking": [
         {
             "id": 1,
@@ -10,17 +11,6 @@
             "Lastname": "lname",
             "email": "email",
             "phone": "phone"
-        },
-        {
-            "id": 2,
-            "check in": "2023-01-28",
-            "check out": "2023-01-28",
-            "adult": "1",
-            "children": "0",
-            "Firstname": "asd",
-            "Lastname": "asd",
-            "email": "doctor_flight@hotmail.com",
-            "phone": "13513513"
         }
     ],
     "location": [
