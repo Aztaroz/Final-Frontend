@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap');
 
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	font-family: 'Noto Sans Thai', sans-serif;
-	background-image: url();
+	background-image: url('https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/header-bg.png?raw=true');
 }
 
 #booking {
@@ -70,7 +73,7 @@ body {
 	/* margin: 0;
 	margin-bottom: 0px; */
 	font-weight: 700;
-	color: #122244;
+	color: #ffffff;
 	font-size: 50px;
 	text-transform: capitalize;
 	text-align: center;
@@ -141,7 +144,7 @@ body {
 #bg-overlay {
 	width: 100%;
 	height: 100vh;
-	background-color: #ffffffac;
+	background: rgba(26, 26, 26, 0.7);
 	position: absolute;
 }
 
@@ -194,6 +197,7 @@ body {
 	height: 35px;
 	border: 2px solid #fff;
 	border-radius: 25px;
+	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 }
 
@@ -202,12 +206,68 @@ body {
 	height: 10px;
 	border-radius: 25%;
 	background-color: #fff;
+	-webkit-animation-name: scroll;
 	animation-name: scroll;
+	-webkit-animation-duration: 2.2s;
 	animation-duration: 2.2s;
+	-webkit-animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
 	animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
 }
 
+@-webkit-keyframes scroll {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	100% {
+
+		transform: translateY(15px);
+		opacity: 0;
+	}
+}
+
+@keyframes scroll {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	100% {
+
+		transform: translateY(15px);
+		opacity: 0;
+	}
+}
+
+
+.history-card {
+	background-image: url('https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/269703022_457170855772520_3731373939879401473_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeF85d2SjwxDuva5SuW2fEP6UxCj10SARBJTEKPXRIBEEkOAPKsyD4Tlhfncq9iyyblrXH8dgSYKhRPxyzg94v7I&_nc_ohc=-fNDHgJOwu0AX99t5nx&_nc_ht=scontent.fbkk5-6.fna&oh=00_AfDnCTRYOR92Sj9C9wagJzXIoe8orI__ZrgvZQyW-qzUSA&oe=63B963D1');
+	height: 100vh;
+}
+
+.bgblackhisttorycard {
+	width: 100%;
+	height: 100vh;
+	background: rgba(26, 26, 26, 0.7);
+	position: absolute;
+}
+
+.content_history {
+	position: relative;
+}
 
 
 @media only screen and (max-width: 480px) {

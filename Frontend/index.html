@@ -22,6 +22,7 @@
 	<!-- index.css -->
 	<script src="../Backend/index.js"></script>
 
+
 	<!-- <script>
 		// window.addEventListener("beforeunload", function(event) {
 		//   event.returnValue = "Write something clever here..";
@@ -39,40 +40,26 @@
 <body>
 	<!-- <div class="BGblack"></div> -->
 	<!-- <button onclick="checkAvailable()">Test</button> -->
-	<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+	<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex fixed-top">
 		<div class="container-fluid">
-			<button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-				data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<i class="fas fa-bars"></i>
+			<a class="navbar-brand" href="#">@เชียงราย</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
-				<ul class="navbar-nav mb-2 mb-lg-0">
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#" style="color: #ffffff;">Home</a>
+						<a class="nav-link active" aria-current="page" href="#">หน้าหลัก</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" style="color: #55AF86;">My booking</a>
+						<a class="nav-link" href="#book">จองเต็น</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-							data-mdb-toggle="dropdown" aria-expanded="false" style="color: #55AF86;">
-							Dropdown
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li>
-								<a class="dropdown-item" href="#">Action</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">Another action</a>
-							</li>
-							<li>
-								<hr class="dropdown-divider" />
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">Something else here</a>
-							</li>
-						</ul>
+					<li class="nav-item">
+						<a class="nav-link" href="#">ประวัติการจอง</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">ติดต่อเรา</a>
 					</li>
 				</ul>
 			</div>
@@ -91,7 +78,7 @@
 		</div>
 	</div>
 
-
+	<a name="book"></a>
 	<div id="booking" class="section">
 		<div id="bg-overlay"></div>
 		<!-- <img src="https://scontent.fbkk5-8.fna.fbcdn.net/v/t39.30808-6/269728864_457171215772484_4102551236272931822_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH9z9yRoGpoQBzqGabjoqy0vI5kEFjMZYi8jmQQWMxliOAZr6w9eySrYwrga4Ch5yJmTzLWeteJ7fLbLs1vO5Xm&_nc_ohc=vsrE0nWHWPYAX-lDhEv&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfBDinfVgqyFT9GYRie8uyK2oBYJgd_6LBamHEdtvqMHoA&oe=63B89160"
@@ -193,6 +180,25 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+
+	<div class="history-card">
+		<div class="bgblackhisttorycard"></div>
+		<div class="container">
+			<div class="content_history mt-5">
+				<div class="card" style="width: 18rem;">
+					<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
+						alt="Sunset Over the Sea" />
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the
+							card's content.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </body>
 
