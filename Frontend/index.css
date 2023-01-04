@@ -8,8 +8,7 @@ body {
 
 #booking {
 	background-image: url("https://scontent.fbkk5-8.fna.fbcdn.net/v/t39.30808-6/269728864_457171215772484_4102551236272931822_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH9z9yRoGpoQBzqGabjoqy0vI5kEFjMZYi8jmQQWMxliOAZr6w9eySrYwrga4Ch5yJmTzLWeteJ7fLbLs1vO5Xm&_nc_ohc=vsrE0nWHWPYAX-lDhEv&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfBDinfVgqyFT9GYRie8uyK2oBYJgd_6LBamHEdtvqMHoA&oe=63B89160");
-	border: 3px solid red;
-	height: 130vh;
+	height: 100vh;
 }
 
 
@@ -30,9 +29,9 @@ body {
 	background: #fff;
 	box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
 	border-radius: 25px;
-	top: 12%;
-	/* left: 0;
-	right: 37%; */
+	/* top: 10%; */
+	left: 10%;
+	/* right: 10%; */
 	/* float: left; */
 }
 
@@ -59,7 +58,7 @@ body {
 .booking-form>form {
 	margin-left: 400px;
 	padding: 30px;
-	border: 1px solid #f9fafc;
+	/* border: 1px solid #f9fafc; */
 	border-left: 0px;
 }
 
@@ -67,14 +66,18 @@ body {
 	margin-bottom: 30px;
 }
 
-.booking-form .form-header h2 {
-	margin: 0;
-	margin-bottom: 0px;
+.textReserve h2 {
+	/* margin: 0;
+	margin-bottom: 0px; */
 	font-weight: 700;
 	color: #122244;
-	font-size: 35px;
+	font-size: 50px;
 	text-transform: capitalize;
 	text-align: center;
+}
+
+.textReserve {
+	margin-top: 20%;
 }
 
 .booking-form .form-group {
@@ -135,6 +138,145 @@ body {
 	width: 100%;
 }
 
+#bg-overlay {
+	width: 100%;
+	height: 100vh;
+	background-color: #ffffffac;
+	position: absolute;
+}
+
+
+.perspective-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	background-image: url(/img/img.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+}
+
+.bg-black {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.perspective-text {
+	position: relative;
+	left: -50px;
+	color: white;
+	font-family: Arial;
+	font-size: 60px;
+	font-weight: 900;
+	text-align: center;
+	letter-spacing: -2px;
+	text-transform: uppercase;
+}
+
+.perspective-line {
+	position: relative;
+	height: 50px;
+	overflow: hidden;
+}
+
+.perspective-line p {
+	margin: 0;
+	height: 50px;
+	line-height: 50px;
+	-webkit-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.perspective-line:hover p {
+	-webkit-transform: translate(0, -50px);
+	transform: translate(0, -50px);
+}
+
+.perspective-line:nth-child(1) {
+	left: 29px;
+}
+
+.perspective-line:nth-child(2) {
+	left: 58px;
+}
+
+.perspective-line:nth-child(3) {
+	left: 87px;
+}
+
+.perspective-line:nth-child(4) {
+	left: 116px;
+}
+
+.perspective-line:nth-child(odd) {
+	-webkit-transform: skew(60deg, -30deg) scaleY(0.667);
+	transform: skew(60deg, -30deg) scaleY(0.667);
+}
+
+.perspective-line:nth-child(odd):hover p {
+	color: #55D8C1;
+}
+
+.perspective-line:nth-child(even) {
+	-webkit-transform: skew(0deg, -30deg) scaleY(1.333);
+	transform: skew(0deg, -30deg) scaleY(1.333);
+}
+
+.perspective-line:nth-child(even):hover p {
+	color: #FF6FB5;
+}
+
+.scroll-downs {
+	position: absolute;
+	top: 80%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 34px;
+	height: 55px;
+}
+
+.mousey {
+	width: 3px;
+	padding: 10px 15px;
+	height: 35px;
+	border: 2px solid #fff;
+	border-radius: 25px;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.scroller {
+	width: 3px;
+	height: 10px;
+	border-radius: 25%;
+	background-color: #fff;
+	-webkit-animation-name: scroll;
+	animation-name: scroll;
+	-webkit-animation-duration: 2.2s;
+	animation-duration: 2.2s;
+	-webkit-animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+	animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+
+
 @media only screen and (max-width: 480px) {
 	.booking-form>.booking-bg {
 		display: none;
@@ -145,9 +287,18 @@ body {
 	}
 }
 
-#bg-overlay {
-	width: 100%;
-	height: 130vh;
-	background-color: #ffffffac;
-	position: absolute;
+@media only screen and (max-width: 820px) {
+	.booking-form>.booking-bg {
+		display: none;
+	}
+
+	.booking-form>form {
+		margin-left: 0px;
+	}
+
+	.booking-form {
+
+		top: 20%;
+		left: 0;
+	}
 }

@@ -1,8 +1,8 @@
 var url = 'http://localhost:4596'
 
-window.addEventListener("beforeunload", function(event) {
-    event.returnValue = "Write something clever here..";
-  });
+// window.addEventListener("beforeunload", function(event) {
+//     event.returnValue = "Write something clever here..";
+//   });
 
 
 // function Date() {
