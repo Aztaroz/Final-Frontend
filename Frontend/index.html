@@ -31,14 +31,15 @@
 		}
 	</script> -->
 
-	<title>Home</title>
+	<title>Home | RESERVE A TENT</title>
 </head>
 
 <!-- <body onbeforeunload="return test()"> -->
 
 <body>
+	<!-- <div class="BGblack"></div> -->
 	<!-- <button onclick="checkAvailable()">Test</button> -->
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00522D;">
+	<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
 		<div class="container-fluid">
 			<button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
 				data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false"
@@ -79,16 +80,14 @@
 	</nav>
 
 	<div class="perspective-container">
-		<div class="bg-black"></div>
+
 		<div class="scroll-downs">
 			<div class="mousey">
 				<div class="scroller"></div>
 			</div>
 		</div>
 		<div class="perspective-text">
-				<p>Website</p>
-				<p>CSS Only</p>
-			</div>
+			Reserve A Tent <br>@เชียงราย
 		</div>
 	</div>
 
@@ -102,7 +101,7 @@
 				<div class="row">
 
 					<div class="textReserve col-lg-4">
-						<h2>Reserve A Tent <br>@เชียงราย</h2>
+						<h2>จองเต็นได้ที่นี้</h2>
 					</div>
 
 					<div class="col-lg-8">
@@ -116,14 +115,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label title">Check In</span>
-											<input class="form-control rounded-3" type="date" required id="checkin"
+											<input class="form-control rounded-3" type="date" id="checkin"
 												onblur="checkinDate()">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label">Check Out</span>
-											<input class="form-control rounded-3" type="date" required id="checkout"
+											<input class="form-control rounded-3" type="date" id="checkout"
 												onblur="checkoutDate()">
 										</div>
 									</div>
@@ -180,8 +179,7 @@
 
 								<div class="row">
 									<div class="form-btn col-md-6">
-										<button type="submit" class="btn btn-success"
-											onclick="window.open('tentsite.html', '_blank')">
+										<button type="submit" class="btn btn-success" onclick="createData()">
 											Check Availability
 										</button>
 									</div>

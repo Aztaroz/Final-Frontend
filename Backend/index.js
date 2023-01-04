@@ -31,6 +31,7 @@ var url = 'http://localhost:4596'
 //     }
 // }
 function checkinDate() {
+
     const today = new Date().toISOString().split("T")[0];
     const chkin = document.getElementById('checkin').value
     if (chkin < today) {
@@ -84,26 +85,37 @@ function createData() {
     var email = document.getElementById('email').value
     var phone = document.getElementById('phone').value
 
+    // check if the form has a null value
+    // if (chkin == '' || chkout == '' || adult == '' || children == '' || fname == '' || lname == '' || email == '' || phone == '') {
+    //     Swal.fire({
+    //         icon: 'error',
+    //         title: 'Oops...',
+    //         text: 'Please Fill Out All Form',
+    //     })
+    // } else {
+        fetch(url + '/booking', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "id": null,
+                "check in": chkin,
+                "check out": chkout,
+                "adult": adult,
+                "children": children,
+                "Firstname": fname,
+                "Lastname": lname,
+                "email": email,
+                "phone": phone
+            })
+        }).then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
 
-    fetch(url + '/booking', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "id": null,
-            "check in": chkin,
-            "check out": chkout,
-            "adult": adult,
-            "children": children,
-            "Firstname": fname,
-            "Lastname": lname,
-            "email": email,
-            "phone": phone
-        })
-    }).then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+        window.open("tentsite.html");
+    // }
+
 }
 
 // old
