@@ -186,11 +186,6 @@ body {
 	text-transform: uppercase;
 }
 
-.perspective-line {
-	position: relative;
-	height: 50px;
-	overflow: hidden;
-}
 
 .perspective-line p {
 	margin: 0;
