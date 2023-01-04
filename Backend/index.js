@@ -167,13 +167,13 @@ function createData() {
     var phone = document.getElementById('phone').value
 
     // check if the form has a null value
-    // if (chkin == '' || chkout == '' || adult == '' || children == '' || fname == '' || lname == '' || email == '' || phone == '') {
-    //     Swal.fire({
-    //         icon: 'error',
-    //         title: 'Oops...',
-    //         text: 'Please Fill Out All Form',
-    //     })
-    // } else {
+    if (chkin == '' || chkout == '' || adult == '' || children == '' || fname == '' || lname == '' || email == '' || phone == '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please Fill Out All Form',
+        })
+    } else {
     fetch(url + '/booking', {
         method: 'POST',
         headers: {
@@ -195,7 +195,7 @@ function createData() {
         .catch(error => console.log(error))
 
     window.open("tentsite.html");
-    // }
+    }
 
 }
 
@@ -307,33 +307,56 @@ function loadBooking() {
                 .then(response => response.json())
                 .then(bookingData => {
 
-                    for (const x of locationData) {
-                        for (const y of bookingData) {
-                            if (x['name'] == y['location']) {
-                                html += `<div class="card" style="max-width: 540px;">
-                                <div class="row g-0">
+                    for (const x of bookingData) {
+                        for (const y of locationData) {
+                            if (y['name'] == x['location']) {
+                                html += `<div class="card col-lg-6 ">
+                                <div class="row">
                                     <div class="col-md-4">
-                                <img src=${x["img"]} class="img-fluid rounded-start">
+                                <img src=${y["img"]} class="img-fluid rounded-start">
                                 </div>
                                 <div class="col-md-8" >
                                     <div class="card-body">
-                                        <h5 class="card-title">${y['location']}</h5>
-                                        <p class="card-text">Check in date : ${y['check in']}</p>
-                                        <p class="card-text">Check out date : ${y['check out']}</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
+                                        <h5 class="card-title">${x['location']}</h5>
+                                        <p class="card-text">Check in date : ${x['check in']}</p>
+                                        <p class="card-text">Check out date : ${x['check out']}</p>
+                                        <button class="btn btn-primary">View Booking</button>
+                                        <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                 </div>
-                            </div>
-                        </div> <br>`
+                                </div>
+
+                                </div>
+                            </div>`
                             }
                         }
                     }
+
+                    // for (const x of bookingData) {
+                    //     for (const y of locationData) {
+                    //         if (y['name'] == x['location']) {
+                    //             html += `<div class="card w-25">
+                    //             <div class="bg-image" data-mdb-ripple-color="light">
+                    //                 <img src="${y["img"]}" class="img-fluid"/>
+                    //             </div>
+                    //             <div class="card-body">
+                    //                 <h5 class="card-title">${x['location']}</h5>
+                    //                 <p class="card-text">Check in date : ${x['check in']}</p>
+                    //                 <p class="card-text">Check out date : ${x['check out']}</p>
+
+                    //             </div>
+                    //             </div>`
+                    //         }
+                    //     }
+                    // }
+
                     console.log(html);
                     document.getElementById('booking1').innerHTML = html
 
                 })
 
         })
+
 
 
 }

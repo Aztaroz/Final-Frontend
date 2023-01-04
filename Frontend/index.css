@@ -216,6 +216,23 @@ body {
 	animation-iteration-count: infinite;
 }
 
+.content_history {
+	position: absolute;
+	/* margin: 0 auto;
+	padding: 0; */
+
+}
+
+
+
+
+
+
+
+
+
+
+
 @-webkit-keyframes scroll {
 	0% {
 		opacity: 0;

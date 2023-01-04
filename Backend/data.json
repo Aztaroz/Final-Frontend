@@ -1,41 +1,83 @@
 {
-    "checkAvailable": {},
-    "booking": [
-        {
-            "id": 1,
-            "check in": "2023-01-07",
-            "check out": "2023-01-08",
-            "adult": "adult",
-            "children": "children",
-            "Firstname": "fname",
-            "Lastname": "lname",
-            "email": "email",
-            "phone": "phone",
-            "location": "Camping is life"
-        },
-        {
-            "id": 2,
-            "check in": "2023-01-05",
-            "check out": "2023-01-06",
-            "adult": "1",
-            "children": "0",
-            "Firstname": "kas",
-            "Lastname": "kas",
-            "email": "doctor_flight@hotmail.com",
-            "phone": "1523462457356",
-            "location": "หมู่บ้านผาฮี้"
-        }
-    ],
-    "location": [
-        {
-            "id": 1,
-            "name": "Camping is life",
-            "img": "https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/314120393_564962512276044_307674118878567834_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGljxcPszkRHwmxxY2NFo0kKVD-24RqEsQpUP7bhGoSxBPAVTWdM5aT4HO_vRld3v3FaiA2wpVgyamuStU3S0N_&_nc_ohc=32xjuF3AEaMAX_dwr-W&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCU1ZaToHIqoTZsC8JC1G_cTB_zoG7rzysSbyA_M1TYHg&oe=63B9BA8A"
-        },
-        {
-            "id": 2,
-            "name": "หมู่บ้านผาฮี้",
-            "img": "https://www.palapilii.com/wp-content/uploads/2019/09/DJI_0031.jpg"
-        }
-    ]
+  "checkAvailable": {},
+  "booking": [
+    {
+      "id": 1,
+      "check in": "2023-01-07",
+      "check out": "2023-01-08",
+      "adult": "adult",
+      "children": "children",
+      "Firstname": "fname",
+      "Lastname": "lname",
+      "email": "email",
+      "phone": "phone",
+      "location": "หมู่บ้านผาฮี้"
+    },
+    {
+      "id": 2,
+      "check in": "2023-01-05",
+      "check out": "2023-01-06",
+      "adult": "1",
+      "children": "0",
+      "Firstname": "kas",
+      "Lastname": "kas",
+      "email": "doctor_flight@hotmail.com",
+      "phone": "1523462457356",
+      "location": "Camping is life"
+    },
+    {
+      "id": 3,
+      "check in": "2023-01-05",
+      "check out": "2023-01-06",
+      "adult": "1",
+      "children": "0",
+      "Firstname": "kas",
+      "Lastname": "kas",
+      "email": "doctor_flight@hotmail.com",
+      "phone": "1523462457356",
+      "location": "ภูชี้ดาวลานวิวรีสอร์ท"
+    },
+    {
+      "id": 4,
+      "check in": "2023-01-07",
+      "check out": "2023-01-08",
+      "adult": "adult",
+      "children": "children",
+      "Firstname": "fname",
+      "Lastname": "lname",
+      "email": "email",
+      "phone": "phone",
+      "location": "หมู่บ้านผาฮี้"
+    },
+    {
+      "id": 5,
+      "check in": "2023-01-07",
+      "check out": "2023-01-08",
+      "adult": "adult",
+      "children": "children",
+      "Firstname": "fname",
+      "Lastname": "lname",
+      "email": "email",
+      "phone": "phone",
+      "location": "ภูชี้ดาวลานวิวรีสอร์ท"
+    }
+
+  ],
+  "location": [
+    {
+      "id": 1,
+      "name": "Camping is life",
+      "img": "https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/314120393_564962512276044_307674118878567834_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGljxcPszkRHwmxxY2NFo0kKVD-24RqEsQpUP7bhGoSxBPAVTWdM5aT4HO_vRld3v3FaiA2wpVgyamuStU3S0N_&_nc_ohc=32xjuF3AEaMAX_dwr-W&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCU1ZaToHIqoTZsC8JC1G_cTB_zoG7rzysSbyA_M1TYHg&oe=63B9BA8A"
+    },
+    {
+      "id": 2,
+      "name": "หมู่บ้านผาฮี้",
+      "img": "https://www.palapilii.com/wp-content/uploads/2019/09/DJI_0031.jpg"
+    },
+    {
+      "id": 3,
+      "name": "ภูชี้ดาวลานวิวรีสอร์ท",
+      "img": "https://s359.kapook.com/pagebuilder/88bb96f1-d403-4430-bb0f-51e17010c802.jpg"
+    }
+  ]
 }
