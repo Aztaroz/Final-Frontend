@@ -1,49 +1,49 @@
 
-// Get the modal
-var modal = document.getElementById('myModal');
+// // Get the modal
+// var modal = document.getElementById('myModal');
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img1 = document.getElementById('myImg1');
-var img2 = document.getElementById('myImg2');
-var img3 = document.getElementById('myImg3');
-var img4 = document.getElementById('myImg4');
-var img5 = document.getElementById('myImg5');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
+// // Get the image and insert it inside the modal - use its "alt" text as a caption
+// var img1 = document.getElementById('myImg1');
+// var img2 = document.getElementById('myImg2');
+// var img3 = document.getElementById('myImg3');
+// var img4 = document.getElementById('myImg4');
+// var img5 = document.getElementById('myImg5');
+// var modalImg = document.getElementById("img01");
+// var captionText = document.getElementById("caption");
 
-img1.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-img2.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-img3.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-img4.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-img5.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
+// img1.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
+// img2.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
+// img3.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
+// img4.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
+// img5.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() { 
+//   modal.style.display = "none";
+// }
 
 
 
@@ -174,27 +174,27 @@ function createData() {
     //         text: 'Please Fill Out All Form',
     //     })
     // } else {
-        fetch(url + '/booking', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "id": null,
-                "check in": chkin,
-                "check out": chkout,
-                "adult": adult,
-                "children": children,
-                "Firstname": fname,
-                "Lastname": lname,
-                "email": email,
-                "phone": phone
-            })
-        }).then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error))
+    fetch(url + '/booking', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "id": null,
+            "check in": chkin,
+            "check out": chkout,
+            "adult": adult,
+            "children": children,
+            "Firstname": fname,
+            "Lastname": lname,
+            "email": email,
+            "phone": phone
+        })
+    }).then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
 
-        window.open("tentsite.html");
+    window.open("tentsite.html");
     // }
 
 }
@@ -294,4 +294,46 @@ function checkAvailable() {
                 // }
             }
         })
+}
+
+function loadBooking() {
+
+    var html = ``
+
+    fetch(url + "/location")
+        .then(response => response.json())
+        .then(locationData => {
+            fetch(url + "/booking")
+                .then(response => response.json())
+                .then(bookingData => {
+
+                    for (const x of locationData) {
+                        for (const y of bookingData) {
+                            if (x['name'] == y['location']) {
+                                html += `<div class="card" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                <img src=${x["img"]} class="img-fluid rounded-start">
+                                </div>
+                                <div class="col-md-8" >
+                                    <div class="card-body">
+                                        <h5 class="card-title">${y['location']}</h5>
+                                        <p class="card-text">Check in date : ${y['check in']}</p>
+                                        <p class="card-text">Check out date : ${y['check out']}</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <br>`
+                            }
+                        }
+                    }
+                    console.log(html);
+                    document.getElementById('booking1').innerHTML = html
+
+                })
+
+        })
+
+
 }

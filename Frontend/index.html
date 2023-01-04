@@ -37,9 +37,9 @@
 
 <!-- <body onbeforeunload="return test()"> -->
 
-<body>
+<body onload="loadBooking()">
 	<!-- <div class="BGblack"></div> -->
-	<!-- <button onclick="checkAvailable()">Test</button> -->
+
 	<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">@เชียงราย</a>
@@ -182,24 +182,20 @@
 		</div>
 	</div>
 
-
+	<!-- <button onclick="loadBooking()">Test</button> -->
 	<div class="history-card">
 		<div class="bgblackhisttorycard"></div>
 		<div class="container">
-			<div class="content_history mt-5">
-				<div class="card" style="width: 18rem;">
-					<img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
-						alt="Sunset Over the Sea" />
-					<div class="card-body">
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the
-							card's content.</p>
+			<div class="content_history d-flex justify-content-center g-2">
+				<div id="booking1">
+					<div class="row">
+
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
+
 </body>
 
 </html>
