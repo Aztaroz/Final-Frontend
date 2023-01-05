@@ -44,7 +44,8 @@
 <body onload="loadBooking()">
 	<!-- <div class="BGblack"></div> -->
 
-	<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex fixed-top">
+	<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex fixed-top"
+		style="background: rgba(26, 26, 26, 0.2);">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">@เชียงราย</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -57,13 +58,13 @@
 						<a class="nav-link active" aria-current="page" href="#">หน้าหลัก</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#book">จองเต็น</a>
+						<a class="nav-link" href="#book">ค้นหาสถานที่</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">ประวัติการจอง</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">ติดต่อเรา</a>
+						<a class="nav-link" href="#contact">ติดต่อเรา</a>
 					</li>
 				</ul>
 			</div>
@@ -78,7 +79,7 @@
 			</div>
 		</div>
 		<div class="perspective-text">
-			Reserve A Tent <br>@เชียงราย
+			Reserve A Tent <br><i class="fa-sharp fa-solid fa-location-dot"></i>&nbsp;เชียงราย
 		</div>
 	</div>
 
@@ -90,55 +91,56 @@
 		<div class="section-center">
 			<div class="container" id="bggg">
 				<div class="row">
+					<div style="margin-top: 10%;">
 
-					<div class="textReserve col-lg-4">
-						<h2>จองเต็นได้ที่นี้</h2>
-					</div>
 
-					<div class="col-lg-8">
-						<div class="booking-form mt-5">
-							<div class="booking-bg"></div>
-							<form>
-								<!-- <div class="form-header">
+						<div class="textReserve">
+							<h2><i class="fas fa-search-location"></i>&nbsp; ค้นหาสถานที่จองเต็นท์</h2>
+						</div>
+						<div>
+							<div class="booking-form mt-5">
+								<div class="booking-bg"></div>
+								<form>
+									<!-- <div class="form-header">
 									<h2>Reserve A Tent <br>@เชียงราย</h2>
 								</div> -->
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<span class="form-label title">Check In</span>
-											<input class="form-control rounded-3" type="date" id="checkin"
-												onblur="checkinDate()">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="form-label title">Check In</span>
+												<input class="form-control rounded-3" type="date" id="checkin"
+													onblur="checkinDate()">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="form-label">Check Out</span>
+												<input class="form-control rounded-3" type="date" id="checkout"
+													onblur="checkoutDate()">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<span class="form-label">Check Out</span>
-											<input class="form-control rounded-3" type="date" id="checkout"
-												onblur="checkoutDate()">
+
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="form-label">Adults</span>
+												<input type="number" class="form-control rounded-3" id="adult" value="1"
+													max="20" min="1">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="form-label">Children</span>
+												<input type="number" class="form-control rounded-3" id="children"
+													value="0" max="20">
+											</div>
 										</div>
 									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<span class="form-label">Adults</span>
-											<input type="number" class="form-control rounded-3" id="adult" value="1"
-												max="20" min="1">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<span class="form-label">Children</span>
-											<input type="number" class="form-control rounded-3" id="children" value="0"
-												max="20">
-										</div>
-									</div>
-								</div>
 
 
 
-								<div class="row">
+									<!-- <div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label">First Name</span>
@@ -165,20 +167,21 @@
 									<span class="form-label">Phone</span>
 									<input class="form-control rounded-3" type="tel"
 										placeholder="Enter your phone number" id="phone">
-								</div>
-								<br>
+								</div> -->
+									<br>
 
-								<div class="row">
-									<div class="form-btn col-md-6">
-										<button type="submit" class="btn btn-success" onclick="createData()">
-											Check Availability
-										</button>
+									<div class="row">
+										<div class="form-btn col-md-6">
+											<button type="button" class="btn btn-success" onclick="createData()">
+												Check Availability
+											</button>
+										</div>
+										<div class="form-btn col-md-6">
+											<input type="reset" class="btn btn-secondary" value="Reset">
+										</div>
 									</div>
-									<div class="form-btn col-md-6">
-										<input type="reset" class="btn btn-secondary" value="Reset">
-									</div>
-								</div>
-							</form>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -188,25 +191,15 @@
 
 	<!-- <button onclick="loadBooking()">Test</button> -->
 
-	<div class="history-card">
-		<div class="bgblackhisttorycard"></div>
-		<!-- <div class="container"> -->
-		<div class="content_history mt-5">
-
-			<div class="row g-3 me-3 ms-3" id="booking1"></div>
-			<!-- </div> -->
-		</div>
-	</div>
-	</div>
 
 
-
-
-	<div>
+	<a name="contact"></a>
+	<div
+		style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
 		<!-- Remove the container if you want to extend the Footer to full width. -->
 		<!-- <div class="my-5"> -->
 
-		<footer class="text-white text-center text-lg-start bg-dark">
+		<footer class="text-white text-center text-lg-start shadow-5-strong">
 			<!-- Grid container -->
 			<div class="container p-4">
 				<!--Grid row-->
@@ -220,7 +213,6 @@
 						</p>
 					</div>
 					<!--Grid column-->
-					<hr>
 					<!--Grid column-->
 					<div class="col-lg-6 col-md-12 mb-4">
 						<ul class="fa-ul" style="margin-left: 1.65em;">

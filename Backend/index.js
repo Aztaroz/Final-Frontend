@@ -161,40 +161,49 @@ function createData() {
     var chkout = document.getElementById('checkout').value
     var adult = document.getElementById('adult').value
     var children = document.getElementById('children').value
-    var fname = document.getElementById('fname').value
-    var lname = document.getElementById('lname').value
-    var email = document.getElementById('email').value
-    var phone = document.getElementById('phone').value
+    // var fname = document.getElementById('fname').value
+    // var lname = document.getElementById('lname').value
+    // var email = document.getElementById('email').value
+    // var phone = document.getElementById('phone').value
 
     // check if the form has a null value
-    if (chkin == '' || chkout == '' || adult == '' || children == '' || fname == '' || lname == '' || email == '' || phone == '') {
+    // if (chkin == '' || chkout == '' || adult == '' || children == '' || fname == '' || lname == '' || email == '' || phone == '') {
+    //     Swal.fire({
+    //         icon: 'error',
+    //         title: 'Oops...',
+    //         text: 'Please Fill Out All Form',
+    //     })
+    if (chkin == '' || chkout == '' || adult == '' || children == '') {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Please Fill Out All Form',
         })
     } else {
-    fetch(url + '/booking', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "id": null,
-            "check in": chkin,
-            "check out": chkout,
-            "adult": adult,
-            "children": children,
-            "Firstname": fname,
-            "Lastname": lname,
-            "email": email,
-            "phone": phone
-        })
-    }).then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+        
+        fetch(url + '/booking', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "id": null,
+                "check in": chkin,
+                "check out": chkout,
+                "adult": adult,
+                "children": children,
+                // "Firstname": fname,
+                // "Lastname": lname,
+                // "email": email,
+                // "phone": phone
+                
+            })
+            
+        }).then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
 
-    window.open("tentsite.html");
+        window.open("tentsite.html");
     }
 
 }
@@ -350,13 +359,10 @@ function loadBooking() {
                     //     }
                     // }
 
-                    console.log(html);
-                    document.getElementById('booking1').innerHTML = html
+                    // console.log(html);
+                    //  
 
                 })
 
         })
-
-
-
 }
