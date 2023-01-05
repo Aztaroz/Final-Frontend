@@ -61,13 +61,13 @@
       "phone": "phone",
       "location": "ภูชี้ดาวลานวิวรีสอร์ท"
     }
-
   ],
   "location": [
     {
       "id": 1,
       "name": "Camping is life",
       "img": "https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/314120393_564962512276044_307674118878567834_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGljxcPszkRHwmxxY2NFo0kKVD-24RqEsQpUP7bhGoSxBPAVTWdM5aT4HO_vRld3v3FaiA2wpVgyamuStU3S0N_&_nc_ohc=32xjuF3AEaMAX_dwr-W&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCU1ZaToHIqoTZsC8JC1G_cTB_zoG7rzysSbyA_M1TYHg&oe=63B9BA8A"
+      
     },
     {
       "id": 2,
@@ -78,6 +78,7 @@
       "id": 3,
       "name": "ภูชี้ดาวลานวิวรีสอร์ท",
       "img": "https://s359.kapook.com/pagebuilder/88bb96f1-d403-4430-bb0f-51e17010c802.jpg"
+
     }
   ]
 }

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap');
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Noto Sans Thai', sans-serif;
+	background-image: url('https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/header-bg.png?raw=true');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+}
+
+.header-container {
+	height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.textHeader {
+	position: relative;
+	color: white;
+	font-size: 80px;
+	font-weight: 900;
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	top: -10%;
+}
+
+.card {
+	box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-downs {
+	position: absolute;
+	top: 20%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 34px;
+	height: 55px;
+}
+
+.mousey {
+	width: 3px;
+	padding: 10px 15px;
+	height: 35px;
+	border: 2px solid #fff;
+	border-radius: 25px;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.scroller {
+	width: 3px;
+	height: 10px;
+	border-radius: 25%;
+	background-color: #fff;
+	-webkit-animation-name: scroll;
+	animation-name: scroll;
+	-webkit-animation-duration: 2.2s;
+	animation-duration: 2.2s;
+	-webkit-animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+	animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes scroll {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	100% {
+
+		transform: translateY(15px);
+		opacity: 0;
+	}
+}
+
+@keyframes scroll {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	100% {
+
+		transform: translateY(15px);
+		opacity: 0;
+	}
+}

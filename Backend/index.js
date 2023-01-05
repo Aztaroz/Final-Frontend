@@ -180,7 +180,7 @@ function createData() {
             text: 'Please Fill Out All Form',
         })
     } else {
-        
+
         fetch(url + '/booking', {
             method: 'POST',
             headers: {
@@ -196,14 +196,17 @@ function createData() {
                 // "Lastname": lname,
                 // "email": email,
                 // "phone": phone
-                
+
             })
-            
+
         }).then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.log(error))
-
-        window.open("tentsite.html");
+        sessionStorage.setItem('chkin', chkin)
+        sessionStorage.setItem('chkout', chkout)
+        sessionStorage.setItem('adult', adult)
+        sessionStorage.setItem('children', children)
+        window.open("test.html");
     }
 
 }
@@ -365,4 +368,88 @@ function loadBooking() {
                 })
 
         })
+}
+
+function sessionData() {
+    var chkin = sessionStorage.getItem('chkin')
+    var chkout = sessionStorage.getItem('chkout')
+    var adult = sessionStorage.getItem('adult')
+    var children = sessionStorage.getItem('children')
+
+    console.log('Check in : ', chkin);
+    console.log('Check out : ', chkout);
+    console.log('Adult : ', adult);
+    console.log('Children : ', children);
+}
+
+
+function selectOption(name) {
+    var html = ''
+    switch (name) {
+        case 'Camping is life':
+            html += 
+            `<div class="mb-3">
+            <label class="form-label">Rent a tent site</label>
+            <select class="form-control" id="tentsite">
+                <option value="false" disabled selected>Select Your Option...</option>
+                <option value="true">Yes (200 THB)</option>
+            </select>
+            <label class="form-label">Fishing</label>
+            <select class="form-control" id="fishing">
+                <option value="false" disabled selected>Select Your Option...</option>
+                <option value="true">Yes (200 THB / Person)</option>
+            </select>
+            <input class="form-control" type="number">
+            </div>`
+            break;
+    
+        default:
+            break;
+    }
+    Swal.fire({
+        title: 'Select your additional',
+        html: html,
+        focusConfirm: false,
+        preConfirm: () => {
+            CreateTransaction();
+        }
+    });
+}
+
+
+function confirmBooking() {
+    var chkin = sessionStorage.getItem('chkin')
+    var chkout = sessionStorage.getItem('chkout')
+    var adult = sessionStorage.getItem('adult')
+    var children = sessionStorage.getItem('children')
+    var html = ''
+    Swal.fire({
+        title: 'Create Sleep Transaction',
+        html:
+            `<select class="form-control" id="age_group">
+          <option value="" disabled selected>Please Select...</option>
+          <option value="15 to 24 years">15 to 24 years</option>
+          <option value="25 to 34 years">25 to 34 years</option>
+          <option value="35 to 44 years">35 to 44 years</option>
+          <option value="45 to 54 years">45 to 54 years</option>
+          <option value="55 to 64 years">55 to 64 years</option>
+          <option value="65 years and over">65 years and over</option>
+        </select></div>`
+            +
+
+            '<div class="mb-3"><label for="sex" class="form-label">Sex</label>' +
+            // '<input class="form-control" id="sex" placeholder="Sex"></div>' 
+            `<select class="form-control" id="sex">
+          <option value="" disabled selected>Please Select...</option>
+          <option value="Men">Men</option>
+          <option value="Women">Women</option>
+          <option value="Both">Both</option>
+        </select></div>`
+        ,
+
+        focusConfirm: false,
+        preConfirm: () => {
+            CreateTransaction();
+        }
+    });
 }

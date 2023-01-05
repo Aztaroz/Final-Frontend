@@ -16,73 +16,70 @@
 
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/018c58095a.js" crossorigin="anonymous"></script>
+    <!-- index.css -->
+    <link rel="stylesheet" href="tentsite.css">
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/018c58095a.js" crossorigin="anonymous"></script>
+    <!-- index.css -->
+    <script src="../Backend/index.js"></script>
 
 </head>
 
-<body
-    style="background-image: url('https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/forest.jpg?raw=true'); background-repeat: no-repeat; background-size: cover;">
-    <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <center>
-            <h1 style="color: white;">
+<body onload="">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex fixed-to"
+        style="background: rgba(26, 26, 26, 0.2);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-sharp fa-solid fa-location-dot"></i>&nbsp;เชียงราย</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">หน้าหลัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#book">ค้นหาสถานที่</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentsite.html">ประวัติการจอง</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">ติดต่อเรา</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="header-container">
+        <div class="textHeader">
+            <h1 class="textHeader">
                 <i class="fa-solid fa-tents"></i>
                 Available Tent Site
                 <i class="fa-solid fa-tents"></i>
             </h1>
-        </center>
+        </div>
+        <div class="scroll-downs">
+            <div class="mousey">
+                <div class="scroller"></div>
+            </div>
+        </div>
+    </div>
 
-        <br>
-        <br>
-        <br>
 
+    <div class="container-fluid">
         <center>
-            <!-- <div class=" bgtest">
-    </div> -->
-            <div class="row">
-                <!-- <div class="col-lg-4">
-                    <div class="card border-0" style="width: 18rem; height: 420px;">
-                        <img src="https://s359.kapook.com/pagebuilder/88bb96f1-d403-4430-bb0f-51e17010c802.jpg"
-                            class="card-img-top" alt="..." class="card-img-top" alt="..." style="height: 200px; ">
-                        <div class="card-body">
-                            <h5 class="card-title">ภูชี้ดาวลานวิวรีสอร์ท</h5>
-                            <p class="card-text">🏕: ราคา 250 บาท</p>
-                            <p class="card-text">⚡: มีไฟฟ้าบริการ</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="card border-0" style="width: 18rem; height: 420px;">
-                        <img src="https://www.palapilii.com/wp-content/uploads/2019/09/DJI_0031.jpg"
-                            class="card-img-top" alt="..." style="height: 200px;">
-                        <div class="card-body">
-                            <h5 class="card-title">หมู่บ้านผาฮี้</h5>
-                            <p class="card-text">🏕: ราคา 1,800 - 2,300</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card border-0" style="width: 18rem; height: 420px;">
-                        <img src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/314120393_564962512276044_307674118878567834_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGljxcPszkRHwmxxY2NFo0kKVD-24RqEsQpUP7bhGoSxBPAVTWdM5aT4HO_vRld3v3FaiA2wpVgyamuStU3S0N_&_nc_ohc=32xjuF3AEaMAX_dwr-W&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCU1ZaToHIqoTZsC8JC1G_cTB_zoG7rzysSbyA_M1TYHg&oe=63B9BA8A"
-                            class="card-img-top" alt="..." class="card-img-top" alt="..." style="height: 200px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Camping is life</h5>
-                            <p class="card-text">🏕: ราคา 200 บาท</p>
-                            <p class="card-text">📶: Free WiFi </p>
-                            <p class="card-text">⚡: มีไฟฟ้าบริการ </p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="col-lg-4">
-                    <div class="card text-center border-0">
+                    <div class="card text-center border-0" style="width: 430px;">
                         <div class="card border-0">
-                            <img src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/314120393_564962512276044_307674118878567834_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGljxcPszkRHwmxxY2NFo0kKVD-24RqEsQpUP7bhGoSxBPAVTWdM5aT4HO_vRld3v3FaiA2wpVgyamuStU3S0N_&_nc_ohc=32xjuF3AEaMAX_dwr-W&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCU1ZaToHIqoTZsC8JC1G_cTB_zoG7rzysSbyA_M1TYHg&oe=63B9BA8A"
+                            <img src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t39.30808-6/313932529_564962692276026_710655157048564667_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHNpz0xXPaP6cnfjCqOYQ63rkxExGnYoROuTETEadihE00zQT92KKz8NS1KKCrrWEUhq8o-5iq5i1Q8q0vMYt4n&_nc_ohc=XNy8hyWfWeUAX-9WyvS&_nc_ht=scontent.fbkk12-4.fna&oh=00_AfBv4x3fP7XiIm97z8Wp5CKryDlN0u9Pie6VVE1z8ToJqg&oe=63BB12B9"
                                 class="card-img-top" alt="..." class="card-img-top" alt="..." style="height: 200px;">
                         </div>
                         <div class="card-body">
@@ -90,7 +87,8 @@
                             <p class="card-text">
                                 ราคา 200 ฿
                             </p>
-                            <a href="tentsite/Camping-is-life.html" target="_blank" class="btn btn-primary">Read More</a>
+                            <a href="tentsite/Camping-is-life.html" target="_blank" class="btn btn-primary">Read
+                                More</a>
                         </div>
                         <div class="card-footer text-muted">
                             📶: Free WiFi | ⚡: มีไฟฟ้าบริการ
@@ -99,7 +97,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="card text-center border-0">
+                    <div class="card text-center border-0" style="width: 430px;">
                         <div class="card border-0">
                             <img src="https://www.palapilii.com/wp-content/uploads/2019/09/DJI_0031.jpg"
                                 class="card-img-top" alt="..." style="height: 200px;">
@@ -118,7 +116,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="card text-center border-0">
+                    <div class="card text-center border-0" style="width: 430px;">
                         <div class="card border-0">
                             <img src="https://s359.kapook.com/pagebuilder/88bb96f1-d403-4430-bb0f-51e17010c802.jpg"
                                 class="card-img-top" alt="..." class="card-img-top" alt="..." style="height: 200px; ">
@@ -131,7 +129,7 @@
                             <a href="tentsite/Phu-chee-doa.html" target="_blank" class="btn btn-primary">Read More</a>
                         </div>
                         <div class="card-footer text-muted">
-                            ⚡: มีไฟฟ้าบริการ
+                            📶: No WiFi | ⚡: มีไฟฟ้าบริการ
                         </div>
                     </div>
                 </div>
@@ -139,7 +137,45 @@
             </div>
         </center>
     </div>
+    <br>
+    <br>
+    <br>
 
+    <div
+        style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
+        <footer class="text-white text-center text-lg-start shadow-5-strong">
+            <br><br>
+            <div class="row">
+                <div class="col-xl-2"></div>
+                <div class="col-xl-8">
+                    <h5 class="text-uppercase mb-4">About us</h5>
+                </div>
+                <div class="col-xl-2"></div>
+
+                <div class="col-xl-2"></div>
+                <div class="col-xl-4">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto iure consequatur vel.
+                    Earum reprehenderit, ducimus delectus praesentium eum alias aliquam!<br><br>
+                    by TFBF company<br><br>
+                </div>
+                <div class="col-xl-4">
+                    <i class="fa-solid fa-house"></i>&nbsp Walailak University top 11 world ranking<br><br>
+                    <i class="fa-solid fa-envelope"></i>&nbsp walailak555@gmail.cum<br><br>
+                    <i class="fa-solid fa-phone"></i>&nbsp 1111111111<br>
+                </div>
+                <div class="col-xl-2"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                        © 2023 ITD:
+                        <a class="text-white" href="#">INFORMATION TECHNOLOGY AND DIGITAL INNOVATION</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 </body>
 
