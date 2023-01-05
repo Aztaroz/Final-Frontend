@@ -24,7 +24,7 @@
     /* Style the body */
     body {
       font-family: 'Noto Sans Thai', sans-serif;
-      background-image: url(https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.15752-9/320486906_721370305980792_8088969908646432906_n.png?_nc_cat=110&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEyeFmu0N1m4_fmDPpXNWYwyFfBMG91marIV8Ewb3WZqvsJe8AjlKWF-5AQHMPdQB_l486BcN6G5admrIUAXLs_&_nc_ohc=ZXqCFS-20c8AX-ZXwFy&_nc_ht=scontent.fbkk5-4.fna&oh=03_AdQVHbrxjh69MFKAdYniFX5j76lHEFbPRaFfdXijWF34Tw&oe=63DE5462);
+      background-image: url(https://raw.githubusercontent.com/Aztaroz/Final-Frontend/main/Frontend/tentsite/img/Camping-is-life.png);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -46,6 +46,73 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       top: -10%;
+    }
+
+    .scroll-downs {
+      position: absolute;
+      top: 1%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 34px;
+      height: 55px;
+    }
+
+    .mousey {
+      width: 3px;
+      padding: 10px 15px;
+      height: 35px;
+      border: 2px solid #fff;
+      border-radius: 25px;
+      box-sizing: content-box;
+    }
+
+    .scroller {
+      width: 3px;
+      height: 10px;
+      border-radius: 25%;
+      background-color: #fff;
+      animation-name: scroll;
+      animation-duration: 2.2s;
+      animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+      animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+
+        transform: translateY(15px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+
+        transform: translateY(15px);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -93,6 +160,7 @@
       </div>
     </div>
   </div>
+  <br><br>
 
   <div class="container">
     <div class="row g-4">
