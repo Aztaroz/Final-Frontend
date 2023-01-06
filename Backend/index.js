@@ -317,6 +317,25 @@ function loadBooking() {
                                 // </div>`
 
                                 html +=
+                                //     ` <div class="col">
+                                //     <div class="card">
+                                //       <img src="${y["img"]}" class="card-img-top" alt="...">
+                                //       <div class="card-body">
+                                //       <h5 class="card-title">${x['location']}</h5>
+                                //       <p class="card-text">
+                                //                 Check in date : <b>${x['check in']}</b>
+                                //                 </p>
+                                //                 <p class="card-text">
+                                //                 Check out date : <b>${x['check out']}</b>
+                                //                 </p>
+                                //                 <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
+                                //                     <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
+                                //                 <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
+                                //       </div>
+                                //     </div>
+                                //   </div>
+                                //     `
+
                                     `<br>
                                     <div class="col-12 col-sm-4">
                     <div class="card text-center border-0 bg-primary bg-white">
@@ -341,10 +360,11 @@ function loadBooking() {
                     </div>
                 </div>`
 
-
+               
                             }
                         }
                     }
+                    
                     if (html == ``) {
                         document.getElementById('booking1').innerHTML = `<h1><font color="white">No Booking Data</font></h1>`
                     } else {
