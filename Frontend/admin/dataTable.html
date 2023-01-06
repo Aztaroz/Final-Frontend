@@ -23,6 +23,8 @@
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/018c58095a.js" crossorigin="anonymous"></script>
 
+    <script src="../../Backend/index.js"></script>
+
     <script>
         function loadTable() {
             fetch('http://localhost:4596/booking')
@@ -48,6 +50,7 @@
                         trHTML += "<td>" + object["moo-gata"] + "</td>";
                         trHTML += "<td>" + object["moo-gata-size"] + "</td>";
                         trHTML += "<td>" + object["total price"] + "</td>";
+                        trHTML += `<td><button class="btn btn-danger" onclick="deleteData(${object['id']})"><i class="fa-solid fa-trash"></i></button></td>`;
                         trHTML += "</tr>";
                         num++;
                     }

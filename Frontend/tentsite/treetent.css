@@ -101,27 +101,33 @@
 }
 
 
+/*Iphone 12 pro*/
+@media screen and (device-width: 390px) and (device-height: 844px) {
 
-
-@media only screen and (min-width: 390px) {
-
+  /*Home*/
   .textHeader {
     font-size: 25px;
   }
 
 }
 
-@media only screen and (max-width: 819px) {
 
+@media screen and (device-width: 844px) and (device-height: 390px) {
+
+  /*Home*/
   .textHeader {
     font-size: 30px;
   }
 
+
 }
 
-/*Ipad Air*/
+/*Iphone 12 pro*/
 
-@media only screen and (min-width: 820px) {
+
+
+/*Ipad Air*/
+@media screen and (device-width: 820px) and (device-height: 1180px) {
 
   .textHeader {
     font-size: 50px;
@@ -129,8 +135,13 @@
 
 }
 
+@media screen and (device-width: 1180px) and (device-height: 820px) {
+  .textHeader {
+    font-size: 50px;
+  }
 
-/* @media only screen and (min-width: 1180px) and (max-width: 1180px) {} */
 
+
+}
 
 /*Ipad Air*/

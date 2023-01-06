@@ -17,6 +17,20 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Feonts.google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <!-- Feonts.google -->
+
     <link rel="stylesheet" href="treetent.css">
 
     <link rel="stylesheet" href="/Frontend/responsive/responsive.css">
@@ -30,9 +44,16 @@
 
 
     <style>
+        /* Feonts.google */
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
         .bg {
-            background-image: url("img_girl.jpg");
+            /* Full height */
             height: 100%;
+
+            /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -40,8 +61,8 @@
 
         /* Style the body */
         body {
-            font-family: 'Noto Sans Thai', sans-serif;
-            background-image: url(https://s359.kapook.com/pagebuilder/b55a1d3b-2f93-447e-975d-1b617f7127d6.jpg);
+            background-image: url("https://s359.kapook.com/pagebuilder/b55a1d3b-2f93-447e-975d-1b617f7127d6.jpg");
+
             height: 100%;
             margin: 0;
         }
@@ -59,7 +80,8 @@
         }
 
         .person:hover {
-            border-color: #f1f1f1;
+            border-color: #198754;
+            /* border-color: #f1f1f1; */
         }
 
         .container {
@@ -71,28 +93,36 @@
 <body>
     <div class="bg"></div>
     <div class="container text-center">
-        <h1 style="font-size: 75px; font-weight: bold;">
+        <h1 style="font-size: 80px; font-weight: bolder; font-family: 'DM Serif Display', serif;">
             <i class="fa-solid fa-tents"></i>
             RESERVE A TENT
             <i class="fa-solid fa-tents"></i>
         </h1>
-        <h1>ยินดีต้อนรับ</h1>
-        <h4>กรุณเลือกโหมดในการเข้าสู่ระบบ</h4>
+        <hr style="border: 1px solid black;">
+        <h1 style="font-size: 45px; font-weight: bolder; font-family: 'Questrial', sans-serif;">
+            YOU WELL COME
+        </h1>
+        <br>
+        <br>
+        <h4 style="font-size: 20px; font-weight: bolder; font-family: 'Questrial', sans-serif;">
+            PLEASE SELECT A LOGIN MODE
+        </h4>
         <br>
         <div class="row">
             <div class="col-sm-6">
-                <p class="text-center"><strong>User Mode</strong></p><br>
+                <h5 class="text-center" style="font-family: 'Courgette', cursive;"><strong>USER MODE</strong></h5><br>
                 <a href="../home.html" target="_blank"><img
                         src="https://scontent.fhdy4-1.fna.fbcdn.net/v/t1.15752-9/319408729_686179306493304_874710859761316451_n.png?_nc_cat=106&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEhNL87TZuok1tmBTlQNf2EbjdzIF9tbJxuN3MgX21snLYqrFVxB2nR-fR0J9AJFG3BoJrVfEAeZfgl7UUIdRg4&_nc_ohc=GHH17ESvmboAX_wGtBY&_nc_ht=scontent.fhdy4-1.fna&oh=03_AdR5n-osGPum1LrSD6jvyUTJx47i6i4FhAMrlV2gE9ZVWA&oe=63DF6B5A"
                         class="img-circle person" alt="Random Name" width="255" height="255"></a>
             </div>
             <div class="col-sm-6">
-                <p class="text-center"><strong>Admin Mode</strong></p><br>
-                <img src="https://scontent.fhdy4-1.fna.fbcdn.net/v/t1.15752-9/321762669_1356958801781444_388109339687038142_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFF3mr2ppKlo1Jw_hDgqklQryiuKa8tK8OvKK4pry0rw3RIgl20-4CgobIfj2JnDOxi3FcgLbrH_UVZma0kTgjz&_nc_ohc=NJvfllbpXO8AX9rP64-&_nc_ht=scontent.fhdy4-1.fna&oh=03_AdSPJ7eVDb-M4Uu8hOEV-te-lzsDkc6tQ7PR8TDH3-B_iw&oe=63DF78A9"
-                    class="img-circle person" alt="Random Name" width="255" height="255"></a>
+                <h5 class="text-center" style="font-family: 'Courgette', cursive;"><strong>ADMIN MODE</strong></h5><br>
+                <a href="dataTable.html"><img
+                        src="https://scontent.fhdy4-1.fna.fbcdn.net/v/t1.15752-9/321762669_1356958801781444_388109339687038142_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFF3mr2ppKlo1Jw_hDgqklQryiuKa8tK8OvKK4pry0rw3RIgl20-4CgobIfj2JnDOxi3FcgLbrH_UVZma0kTgjz&_nc_ohc=NJvfllbpXO8AX9rP64-&_nc_ht=scontent.fhdy4-1.fna&oh=03_AdSPJ7eVDb-M4Uu8hOEV-te-lzsDkc6tQ7PR8TDH3-B_iw&oe=63DF78A9"
+                        class="img-circle person" alt="Random Name" width="255" height="255"></a>
             </div>
         </div>
-    
+
 
 
 

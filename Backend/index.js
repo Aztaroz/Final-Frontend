@@ -317,11 +317,12 @@ function loadBooking() {
                                 // </div>`
 
                                 html +=
-                                    `<div class="col-lg-4">
-                    <div class="card text-center border-0" style="width: 430px;">
+                                    `<br>
+                                    <div class="col-12 col-sm-4">
+                    <div class="card text-center border-0 bg-primary bg-white">
                         <div class="card border-0">
                             <img src="${y["img"]}"
-                                class="card-img-top" alt="..." class="card-img-top" alt="..." style="height: 200px;">
+                                class="card-img-top" alt="..." class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${x['location']}</h5>
@@ -329,11 +330,12 @@ function loadBooking() {
                             Check in date : <b>${x['check in']}</b>
                             </p>
                             <p class="card-text">
-                            Check in date : <b>${x['check out']}</b>
+                            Check out date : <b>${x['check out']}</b>
                             </p>
                             <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
                                 <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
+                        </div>
                         </div>
                         </div>
                     </div>
@@ -461,6 +463,7 @@ function editBooking(id) {
                     </div>`,
 
                 focusConfirm: false,
+                showCancelButton: true,
                 preConfirm: () => {
                     return [
                         adult = document.getElementById('adult').value,
@@ -475,24 +478,25 @@ function editBooking(id) {
                             headers: {
                                 'Content-Type': 'application/json'
                             },
-                            body: JSON.stringify({
-                                "id": id,
-                                "location": bookingData['location'],
-                                "check in": bookingData['check in'],
-                                "check out": bookingData['check out'],
-                                "adult": adult,
-                                "children": children,
-                                "firstname": firstname,
-                                "lastname": lastname,
-                                "email": email,
-                                "phone": phone,
-                                "tent": bookingData['tent'],
-                                "tent_amount": bookingData['tent_amount'],
-                                "fishing": bookingData['fishing'],
-                                "moo-gata": bookingData['moo-gata'],
-                                "moo-gata-size": bookingData['moo-gata-size'],
-                                "total price": bookingData['total price']
-                            })
+                            body:
+                                JSON.stringify({
+                                    "id": id,
+                                    "location": bookingData['location'],
+                                    "check in": bookingData['check in'],
+                                    "check out": bookingData['check out'],
+                                    "adult": adult,
+                                    "children": children,
+                                    "firstname": firstname,
+                                    "lastname": lastname,
+                                    "email": email,
+                                    "phone": phone,
+                                    "tent": bookingData['tent'],
+                                    "tent_amount": bookingData['tent_amount'],
+                                    "fishing": bookingData['fishing'],
+                                    "moo-gata": bookingData['moo-gata'],
+                                    "moo-gata-size": bookingData['moo-gata-size'],
+                                    "total price": bookingData['total price']
+                                })
                         }).then(response => response.json())
                             .then(data => console.log(data))
                             .catch(error => console.log(error))
@@ -515,7 +519,7 @@ function deleteBooking(id) {
         text: "This will cancel your booking. And you won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
-        cancelButtonText: "Don't cancel it",
+        cancelButtonText: "Cancel it",
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, cancel it'

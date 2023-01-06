@@ -1,0 +1,61 @@
+/* A comment. */
+.history-card {
+  margin-top: 10%;
+}
+
+.textHistory{
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+@media screen and (device-width: 844px) and (device-height: 390px) {
+
+  .card-text {
+    font-size: 12px;
+
+
+  }
+
+  .col-12 .card {
+    width: 27vw;
+
+  }
+
+  .card-body button {
+    font-size: 12px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 130px;
+  }
+
+
+
+
+}
+
+
+
+/*Ipad Air*/
+@media screen and (device-width: 820px) and (device-height: 1180px) {
+
+  .textHeader {
+    font-size: 50px;
+  }
+
+}
+
+@media screen and (device-width: 1180px) and (device-height: 820px) {
+  .textHeader {
+    font-size: 50px;
+  }
+
+
+
+}
+
+/*Ipad Air*/
