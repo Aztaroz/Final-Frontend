@@ -17,7 +17,9 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <script src="test.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="../../Backend/index.js"></script>
 
 
   <style>
@@ -254,73 +256,89 @@
               - 🏠 There are all facilities here. 🏠 <br><br>
               📍: GPS: 586 Mae Yao, Mueang Chiang Rai District, Chiang Rai 57100 :📍
           </p>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="col-md-6 mb-4">
-
-      <!--Card-->
-      <div class="card card-cascade narrower">
-
-        <!--Card image-->
-        <div class="view view-cascade gradient-card-header peach-gradient">
-          <h5 class="mb-0">Custom map</h5>
-        </div>
-        <!--/Card image-->
-
-        <!--Card content-->
-        <div class="card-body card-body-cascade text-center">
-
-          <!--Google map-->
-          <div id="map-container-google-7" class="z-depth-1-half map-container-5" style="height: 300px">
-            <iframe src="https://maps.google.com/maps?q=Madryt&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-              frameborder="0" style="border:0" allowfullscreen=""></iframe>
+          <button class="btn btn-primary w-100" onclick="selectOption('Camping is life','200')">
+            <h4>Booking</h4>
+          </button>
+          <br>
+          <br>
+          <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <h4>
+              Google Map
+            </h4>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h1 id="offcanvasRightLabel" style="font-weight: bold;">Google Map</h1>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div id="map-container-google-3" class="z-depth-1-half map-container-3">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1182.903401785837!2d99.8101988!3d19.960892!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d7052a25593617%3A0x77ae9e289ee8e922!2sCamping%20is%20Life!5e1!3m2!1sth!2sth!4v1672997712208!5m2!1sth!2sth"
+                  width="100%" height="300" style="border-radius: 40px;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <br>
+              <hr>
+              <h4 style="font-size: 15px; text-align: start;">
+                <i class="fa-sharp fa-solid fa-location-dot" style="font-size: 30px; color: red;"></i>&nbsp;
+                586 เเม่ยาว อำเภอเมืองเชียงราย เชียงราย 57100
+              </h4>
+              <h4 style="font-size: 15px; text-align: start;">
+                <i class="fa-solid fa-mobile-button" style="font-size: 30px; color: red"></i>&nbsp;
+                097-2975666
+              </h4>
+              <hr>
+              <h1 id="offcanvasRightLabel" style="font-weight: bold; display: flex; align-items: left;">Picture</h1>
+              <img
+                src="https://camper-checkin.com/wp-content/uploads/2020/10/%E0%B8%A7%E0%B8%99%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%94%E0%B8%9C%E0%B8%B5-%E0%B8%81%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%99%E0%B8%97%E0%B9%8C%E0%B8%8A%E0%B8%A1%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%81%E0%B8%97%E0%B8%B5%E0%B9%88-%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2camper-checkin.com-%E0%B8%88%E0%B8%B8%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B9%81%E0%B8%84%E0%B8%A1%E0%B8%9B%E0%B9%8C.jpg"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+              <br>
+              <img
+                src="https://ที่กางเต้นท์.com/wp-content/uploads/2020/08/%E0%B8%81%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%99%E0%B8%97%E0%B9%8C-%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B8%84%E0%B8%B3-%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A24.jpg"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+              <br>
+              <img src="https://image.bangkokbiznews.com/uploads/images/md/2021/12/ZMvd4ZDjhpm1jRI29FYA.webp"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+              <br>
+              <img src="https://www.chiangraifocus.com/wp-content/uploads/2021/12/CRF_3014-768x579.jpg"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+            </div>
           </div>
-
-
         </div>
-        <!--/.Card content-->
-
-      </div>
-      <!--/.Card-->
-
-    </div>
   </center><br>
 
-  <div
-    style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
-    <footer class="text-white text-center text-lg-start shadow-5-strong">
-      <br><br>
-      <div class="row">
-        <div class="col-xl-2"></div>
-        <div class="col-xl-8">
-          <h5 class="text-uppercase mb-4">About us</h5>
-        </div>
-        <div class="col-xl-2"></div>
+  <div>
+    <a name="contact"></a>
+    <footer class="bg-light text-center text-white"
+      style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
 
-        <div class="col-xl-2"></div>
-        <div class="col-xl-4">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto iure consequatur vel.
-          Earum reprehenderit, ducimus delectus praesentium eum alias aliquam!<br><br>
-          by TFBF company<br><br>
-        </div>
-        <div class="col-xl-4">
-          <i class="fa-solid fa-house"></i>&nbsp Walailak University top 11 world ranking<br><br>
-          <i class="fa-solid fa-envelope"></i>&nbsp walailak555@gmail.cum<br><br>
-          <i class="fa-solid fa-phone"></i>&nbsp 1111111111<br>
-        </div>
-        <div class="col-xl-2"></div>
+          <a class="btn text-white btn-floating m-1" style="background-color: #b02323;"
+            href="https://www.youtube.com/channel/UCFWaXwOhJ3Ve0_-2zzjK6hw" role="button"><i
+              class="fa-brands fa-youtube"></i></a>
+
+
+
+          <a class="btn text-white btn-floating m-1" style="background-color: #333333;"
+            href="https://github.com/Aztaroz/Final-Frontend" role="button"><i class="fab fa-github"></i></a>
+        </section>
+
       </div>
-      <br>
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 ITD:
-            <a class="text-white" href="#">INFORMATION TECHNOLOGY AND DIGITAL INNOVATION</a>
-          </div>
-        </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://www.facebook.com/it.walailak">Information Technology and Digital
+          Innovation.com</a>
       </div>
+
     </footer>
   </div>
 </body>

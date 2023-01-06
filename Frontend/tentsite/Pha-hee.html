@@ -17,7 +17,10 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <script src="test.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="../../Backend/index.js"></script>
+
 
 
   <style>
@@ -239,9 +242,63 @@
               - 🏞 Organic vegetable garden. 🏞 <br><br>
               📍: 9R2G+PG6, 1149, Pong Ngam, Mae Sai District, Chiang Rai 57130 :📍 </p>
           </p>
+          <button class="btn btn-primary w-100" onclick="selectOption('Pha hee','900')">
+            <h4>Booking</h4>
+          </button>
+          <br>
+          <br>
+          <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <h4>
+              Google Map
+            </h4>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h1 id="offcanvasRightLabel" style="font-weight: bold;">Google Map</h1>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div id="map-container-google-3" class="z-depth-1-half map-container-3">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.1876289101486!2d99.82627041104456!3d20.35192269592638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d6f5f9f953efc7%3A0xf52cd8d5c32272eb!2z4Lir4Lih4Li54LmI4Lia4LmJ4Liy4LiZ4Lic4Liy4Liu4Li14LmJ!5e0!3m2!1sen!2sth!4v1672994467441!5m2!1sen!2sth"
+                  width="100%" height="300" style="border-radius: 40px;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <br>
+              <hr>
+              <h4 style="font-size: 15px; text-align: start;">
+                <i class="fa-sharp fa-solid fa-location-dot" style="font-size: 30px; color: red;"></i>&nbsp;
+                ตำบล โป่งงาม อำเภอแม่สาย เชียงราย 57130
+              </h4>
+              <h4 style="font-size: 15px; text-align: start;">
+                <i class="fa-solid fa-mobile-button" style="font-size: 30px; color: red"></i>&nbsp;
+                092-6146270
+              </h4>
+              <hr>
+              <h1 id="offcanvasRightLabel" style="font-weight: bold; display: flex; align-items: left;">Picture</h1>
+              <img
+                src="https://www.palapilii.com/wp-content/uploads/2019/09/DJI_0031.jpg"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+              <br>
+              <img
+                src="https://www.autoinfo.co.th/wp-content/uploads/2018/10/153.jpg"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+              <br>
+              <img src="https://f.ptcdn.info/206/075/000/r1a3tx18s2TtT5LHOXt-o.jpg"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+              <br>
+              <img src="https://paikondieow.com/wp-content/uploads/2022/02/13-1.jpg"
+                class="img-thumbnail" alt="Hollywood Sign on The Hill" />
+              <br>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
   </center><br>
 
 
@@ -253,45 +310,33 @@
 
 
 
-  <div
-    style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
-    <footer class="text-white text-center text-lg-start shadow-5-strong">
-      <br><br>
-      <div class="row">
-        <div class="col-xl-2"></div>
-        <div class="col-xl-8">
-          <h5 class="text-uppercase mb-4">About us</h5>
-        </div>
-        <div class="col-xl-2"></div>
+  <div>
+    <a name="contact"></a>
+    <footer class="bg-light text-center text-white"
+      style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
 
-        <div class="col-xl-2"></div>
-        <div class="col-xl-4">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto iure consequatur vel.
-          Earum reprehenderit, ducimus delectus praesentium eum alias aliquam!<br><br>
-          by TFBF company<br><br>
-        </div>
-        <div class="col-xl-4">
-          <i class="fa-solid fa-house"></i>&nbsp Walailak University top 11 world ranking<br><br>
-          <i class="fa-solid fa-envelope"></i>&nbsp walailak555@gmail.cum<br><br>
-          <i class="fa-solid fa-phone"></i>&nbsp 1111111111<br>
-        </div>
-        <div class="col-xl-2"></div>
+          <a class="btn text-white btn-floating m-1" style="background-color: #b02323;"
+            href="https://www.youtube.com/channel/UCFWaXwOhJ3Ve0_-2zzjK6hw" role="button"><i
+              class="fa-brands fa-youtube"></i></a>
+
+
+
+          <a class="btn text-white btn-floating m-1" style="background-color: #333333;"
+            href="https://github.com/Aztaroz/Final-Frontend" role="button"><i class="fab fa-github"></i></a>
+        </section>
+
       </div>
-      <br>
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 ITD:
-            <a class="text-white" href="#">INFORMATION TECHNOLOGY AND DIGITAL INNOVATION</a>
-          </div>
-        </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://www.facebook.com/it.walailak">Information Technology and Digital
+          Innovation.com</a>
       </div>
+
     </footer>
   </div>
-
-
-
-
 </body>
 
 </html>

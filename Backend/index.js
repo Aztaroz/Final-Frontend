@@ -76,9 +76,6 @@
 
 
 
-
-
-
 var url = 'http://localhost:4596'
 
 // window.addEventListener("beforeunload", function(event) {
@@ -157,6 +154,7 @@ function checkoutDate() {
 
 function createData() {
     console.log("function createData() is called");
+
     var chkin = document.getElementById('checkin').value
     var chkout = document.getElementById('checkout').value
     var adult = document.getElementById('adult').value
@@ -184,10 +182,11 @@ function createData() {
         sessionStorage.setItem('chkout', chkout)
         sessionStorage.setItem('adult', adult)
         sessionStorage.setItem('children', children)
-        window.open("test.html");
+        window.open("tentsite.html");
     }
 
 }
+
 
 // old
 // function readData() {
@@ -296,31 +295,57 @@ function loadBooking() {
             fetch(url + "/booking")
                 .then(response => response.json())
                 .then(bookingData => {
-
                     for (const x of bookingData) {
                         for (const y of locationData) {
                             if (y['name'] == x['location']) {
-                                html += `<div class="card col-lg-6 ">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                <img src=${y["img"]} class="img-fluid rounded-start">
-                                </div>
-                                <div class="col-md-8" >
-                                    <div class="card-body">
-                                        <h5 class="card-title">${x['location']}</h5>
-                                        <p class="card-text">Check in date : ${x['check in']}</p>
-                                        <p class="card-text">Check out date : ${x['check out']}</p>
-                                        <button class="btn btn-primary">View Booking</button>
-                                        <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                </div>
-                                </div>
 
-                                </div>
-                            </div>`
+                                //     html += `<div class="card col-lg-6 ">
+                                //     <div class="row">
+                                //         <div class="col-md-4">
+                                //     <img src=${y["img"]} class="img-fluid rounded-start">
+                                //     </div>
+                                //     <div class="col-md-8" >
+                                //         <div class="card-body">
+                                //             <h5 class="card-title">${x['location']}</h5>
+                                //             <p class="card-text">Check in date : ${x['check in']}</p>
+                                //             <p class="card-text">Check out date : ${x['check out']}</p>
+                                //             <button class="btn btn-primary">View Booking</button>
+                                //             <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                                //             <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                //     </div>
+                                //     </div>
+
+                                //     </div>
+                                // </div>`
+
+                                html +=
+                                    `<div class="col-lg-4">
+                    <div class="card text-center border-0" style="width: 430px;">
+                        <div class="card border-0">
+                            <img src="${y["img"]}"
+                                class="card-img-top" alt="..." class="card-img-top" alt="..." style="height: 200px;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">${x['location']}</h5>
+                            <p class="card-text">
+                            Check in date : <b>${x['check in']}</b>
+                            </p>
+                            <p class="card-text">
+                            Check in date : <b>${x['check out']}</b>
+                            </p>
+                            <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
+                                <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                        </div>
+                    </div>
+                </div>`
+
+
                             }
                         }
                     }
+                    document.getElementById('booking1').innerHTML = html
 
                     // for (const x of bookingData) {
                     //     for (const y of locationData) {
@@ -348,21 +373,142 @@ function loadBooking() {
         })
 }
 
-function sessionData() {
-    var chkin = sessionStorage.getItem('chkin')
-    var chkout = sessionStorage.getItem('chkout')
-    var adult = sessionStorage.getItem('adult')
-    var children = sessionStorage.getItem('children')
 
-    console.log('Check in : ', chkin);
-    console.log('Check out : ', chkout);
-    console.log('Adult : ', adult);
-    console.log('Children : ', children);
+function newTab(link) {
+    window.open(link);
+}
+
+function viewBooking(id) {
+    fetch(url + '/booking')
+        .then(response => response.json())
+        .then(bookingData => {
+            for (const x of bookingData) {
+                if (x['id'] == id) {
+                    Swal.fire({
+                        title: 'Booking Detail',
+                        html:
+                            `<div class="mb-3">
+                        <span class="form-label">Location</span><br>
+                        <input class="form-control" type="text" value="${x['location']}" disabled><br>
+                        <label class="form-label">Check in Date:</label><br>
+                        <input class="form-control" type="text" value="${x['check in']}" disabled><br>
+                        <label class="form-label">Check out Date:</label><br>
+                        <input class="form-control" type="text" value="${x['check out']}" disabled><br>
+                        <label class="form-label">Adult (person)</label><br>
+                        <input class="form-control" type="text" value="${x['adult']}" disabled><br>
+                        <label class="form-label">Children (person)</label><br>
+                        <input class="form-control" type="text" value="${x['children']}" disabled><br>
+                        <label class="form-label">Firstname</label><br>
+                        <input class="form-control" type="text" value="${x['firstname']}" disabled><br>
+                        <label class="form-label">Lastname</label><br>
+                        <input class="form-control" type="text" value="${x['lastname']}" disabled><br>
+                        <label class="form-label">Email</label><br>
+                        <input class="form-control" type="text" value="${x['email']}" disabled><br>
+                        <label class="form-label">Phone</label><br>
+                        <input class="form-control" type="text" value="${x['phone']}" disabled><br>
+                        <label class="form-label">Total Price</label><br>
+                        <input class="form-control" type="text" value="${x['total price']}" disabled>
+                        </div>`,
+                        focusConfirm: false,
+                        preConfirm: () => {
+                            return [
+                            ]
+                        }
+                    })
+                }
+            }
+        })
+}
+
+function editBooking(id) {
+    var adult = ''
+    var children = ''
+    var firstname = ''
+    var lastname = ''
+    var email = ''
+    var phone = ''
+
+    fetch(url + `/booking/${id}`)
+        .then(response => response.json())
+        .then(bookingData => {
+            Swal.fire({
+                title: `Edit Booking ID : ${id}`,
+                html:
+                    `<div class="mb-3">
+                    <span class="form-label">Location</span><br>
+                    <input class="form-control" type="text" value="${bookingData['location']}" disabled><br>
+                    <label class="form-label">Check in Date:</label><br>
+                    <input class="form-control" type="text" value="${bookingData['check in']}" disabled><br>
+                    <label class="form-label">Check out Date:</label><br>
+                    <input class="form-control" type="text" value="${bookingData['check out']}" disabled><br>
+                    <label class="form-label">Adult (person)</label><br>
+                    <input class="form-control" type="number" value="${bookingData['adult']}" min="1" id="adult"><br>
+                    <label class="form-label">Children (person)</label><br>
+                    <input class="form-control" type="number" value="${bookingData['children']}" min="0" id="children"><br>
+                    <label class="form-label">Firstname</label><br>
+                    <input class="form-control" type="text" value="${bookingData['firstname']}" id="firstname"><br>
+                    <label class="form-label">Lastname</label><br>
+                    <input class="form-control" type="text" value="${bookingData['lastname']}" id="lastname"><br>
+                    <label class="form-label">Email</label><br>
+                    <input class="form-control" type="text" value="${bookingData['email']}" id="email"><br>
+                    <label class="form-label">Phone</label><br>
+                    <input class="form-control" type="text" value="${bookingData['phone']}" id="phone"><br>
+                    <label class="form-label">Total Price</label><br>
+                    <input class="form-control" type="text" value="${bookingData['total price']}" disabled>
+                    </div>`,
+
+                focusConfirm: false,
+                preConfirm: () => {
+                    return [
+                        adult = document.getElementById('adult').value,
+                        children = document.getElementById('children').value,
+                        firstname = document.getElementById('firstname').value,
+                        lastname = document.getElementById('lastname').value,
+                        email = document.getElementById('email').value,
+                        phone = document.getElementById('phone').value,
+
+                        fetch(url + `/booking/${id}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "id": id,
+                                "location": bookingData['location'],
+                                "check in": bookingData['check in'],
+                                "check out": bookingData['check out'],
+                                "adult": adult,
+                                "children": children,
+                                "firstname": firstname,
+                                "lastname": lastname,
+                                "email": email,
+                                "phone": phone,
+                                "tent": bookingData['tent'],
+                                "tent_amount": bookingData['tent_amount'],
+                                "fishing": bookingData['fishing'],
+                                "moo-gata": bookingData['moo-gata'],
+                                "moo-gata-size": bookingData['moo-gata-size'],
+                                "total price": bookingData['total price']
+                            })
+                        }).then(response => response.json())
+                            .then(data => console.log(data))
+                            .catch(error => console.log(error))
+                        
+                    ],
+                    Swal.fire('Saved!', '', 'success')
+                }
+            })
+
+
+
+
+        })
 }
 
 
 function selectOption(location_name, site_price, tent_price) {
     var html = ''
+
     var chkin = sessionStorage.getItem('chkin')
     var chkout = sessionStorage.getItem('chkout')
     var adult = sessionStorage.getItem('adult')
@@ -370,6 +516,8 @@ function selectOption(location_name, site_price, tent_price) {
 
     function totalPrice(location_name, fname, lname, email, phone) {
         var tentsite = parseInt(document.getElementById('tentsite').value)
+
+
 
         // var fname = document.getElementById('fname').value
         // var lname = document.getElementById('lname').value
@@ -389,26 +537,26 @@ function selectOption(location_name, site_price, tent_price) {
                     title: 'Confirmation Your Booking',
                     html:
                         `<div class="mb-3">
-                    <span class="form-label">Location</span>
-                    <input class="form-control" type="text" value="${location_name}" disabled>
-                    <label class="form-label">Check in Date:</label>
-                    <input class="form-control" type="text" value="${chkin}" disabled>
-                    <label class="form-label">Check out Date:</label>
-                    <input class="form-control" type="text" value="${chkout}" disabled>
-                    <label class="form-label">Adult (person)</label>
-                    <input class="form-control" type="text" value="${adult}" disabled>
-                    <label class="form-label">Children (person)</label>
-                    <input class="form-control" type="text" value="${children}" disabled>
-                    <label class="form-label">Firstname</label>
-                    <input class="form-control" type="text" value="${fname}" disabled>
-                    <label class="form-label">Lastname</label>
-                    <input class="form-control" type="text" value="${lname}" disabled>
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="text" value="${email}" disabled>
-                    <label class="form-label">Phone</label>
-                    <input class="form-control" type="text" value="${phone}" disabled>
-                    <label class="form-label">Total Price</label>
-                    <input class="form-control" type="text" value="${totalPrice}" disabled>
+                    <span class="form-label">Location</span><br>
+                    <input class="form-control" type="text" value="${location_name}" disabled><br>
+                    <label class="form-label">Check in Date:</label><br>
+                    <input class="form-control" type="text" value="${chkin}" disabled><br>
+                    <label class="form-label">Check out Date:</label><br>
+                    <input class="form-control" type="text" value="${chkout}" disabled><br>
+                    <label class="form-label">Adult (person)</label><br>
+                    <input class="form-control" type="text" value="${adult}" disabled><br>
+                    <label class="form-label">Children (person)</label><br>
+                    <input class="form-control" type="text" value="${children}" disabled><br>
+                    <label class="form-label">Firstname</label><br>
+                    <input class="form-control" type="text" value="${fname}" disabled><br>
+                    <label class="form-label">Lastname</label><br>
+                    <input class="form-control" type="text" value="${lname}" disabled><br>
+                    <label class="form-label">Email</label><br>
+                    <input class="form-control" type="text" value="${email}" disabled><br>
+                    <label class="form-label">Phone</label><br>
+                    <input class="form-control" type="text" value="${phone}" disabled><br>
+                    <label class="form-label">Total Price</label><br>
+                    <input class="form-control" type="text" value="${totalPrice}" disabled><br>
                     </div>`,
                     // '<label class="form-label"><b>Booking Detail</b></label><hr class="hr">'+
                     // `
@@ -419,6 +567,7 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
                     focusConfirm: false,
                     preConfirm: () => {
+                        Swal.fire('Booking Complete!', '', 'success')
                         return [
                             fetch(url + '/booking', {
                                 method: 'POST',
@@ -436,6 +585,11 @@ function selectOption(location_name, site_price, tent_price) {
                                     "lastname": lname,
                                     "email": email,
                                     "phone": phone,
+                                    "tent": '',
+                                    "tent_amount": '',
+                                    "fishing": fishing,
+                                    "moo-gata": '',
+                                    "moo-gata-size": '',
                                     "total price": totalPrice
 
                                 })
@@ -458,26 +612,26 @@ function selectOption(location_name, site_price, tent_price) {
                     title: 'Confirmation Your Booking',
                     html:
                         `<div class="mb-3">
-                    <label class="form-label">Location</label>
-                    <input class="form-control" type="text" value="${location_name}" disabled>
-                    <label class="form-label">Check in Date:</label>
-                    <input class="form-control" type="text" value="${chkin}" disabled>
-                    <label class="form-label">Check out Date:</label>
-                    <input class="form-control" type="text" value="${chkout}" disabled>
-                    <label class="form-label">Adult (person)</label>
-                    <input class="form-control" type="text" value="${adult}" disabled>
-                    <label class="form-label">Children (person)</label>
-                    <input class="form-control" type="text" value="${children}" disabled>
-                    <label class="form-label">Firstname</label>
-                    <input class="form-control" type="text" value="${fname}" disabled>
-                    <label class="form-label">Lastname</label>
-                    <input class="form-control" type="text" value="${lname}" disabled>
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="text" value="${email}" disabled>
-                    <label class="form-label">Phone</label>
-                    <input class="form-control" type="text" value="${phone}" disabled>
-                    <label class="form-label">Total Price</label>
-                    <input class="form-control" type="text" value="${totalPrice}" disabled>
+                    <label class="form-label">Location</label><br>
+                    <input class="form-control" type="text" value="${location_name}" disabled><br>
+                    <label class="form-label">Check in Date:</label><br>
+                    <input class="form-control" type="text" value="${chkin}" disabled><br>
+                    <label class="form-label">Check out Date:</label><br>
+                    <input class="form-control" type="text" value="${chkout}" disabled><br>
+                    <label class="form-label">Adult (person)</label><br>
+                    <input class="form-control" type="text" value="${adult}" disabled><br>
+                    <label class="form-label">Children (person)</label><br>
+                    <input class="form-control" type="text" value="${children}" disabled><br>
+                    <label class="form-label">Firstname</label><br>
+                    <input class="form-control" type="text" value="${fname}" disabled><br>
+                    <label class="form-label">Lastname</label><br>
+                    <input class="form-control" type="text" value="${lname}" disabled><br>
+                    <label class="form-label">Email</label><br>
+                    <input class="form-control" type="text" value="${email}" disabled><br>
+                    <label class="form-label">Phone</label><br>
+                    <input class="form-control" type="text" value="${phone}" disabled><br>
+                    <label class="form-label">Total Price</label><br>
+                    <input class="form-control" type="text" value="${totalPrice}" disabled><br>
                     </div>`,
                     // '<label class="form-label"><b>Booking Detail</b></label><hr class="hr">'+
                     // `
@@ -488,6 +642,7 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
                     focusConfirm: false,
                     preConfirm: () => {
+                        Swal.fire('Booking Complete!', '', 'success')
                         return [
                             fetch(url + '/booking', {
                                 method: 'POST',
@@ -505,6 +660,11 @@ function selectOption(location_name, site_price, tent_price) {
                                     "lastname": lname,
                                     "email": email,
                                     "phone": phone,
+                                    "tent": '',
+                                    "tent_amount": '',
+                                    "fishing": '',
+                                    "moo-gata": moo_gata,
+                                    "moo-gata-size": '',
                                     "total price": totalPrice
 
                                 })
@@ -523,6 +683,13 @@ function selectOption(location_name, site_price, tent_price) {
             case 'Phu chee dao':
                 var tent = parseInt(document.getElementById('tent').value)
                 var moo_gata_size = parseInt(document.getElementById('moo-gata-size').value)
+                var size = ''
+                if (moo_gata_size == 300) {
+                    size = 'Small'
+                } else {
+                    size = 'Large'
+                }
+
                 var tent_amount = document.getElementById('tent-amount').value
                 if (tent_amount == '') {
                     totalPrice = site_price + moo_gata_size
@@ -535,26 +702,26 @@ function selectOption(location_name, site_price, tent_price) {
                     title: 'Confirmation Your Booking',
                     html:
                         `<div class="mb-3">
-                    <label class="form-label">Location</label>
-                    <input class="form-control" type="text" value="${location_name}" disabled>
-                    <label class="form-label">Check in Date:</label>
-                    <input class="form-control" type="text" value="${chkin}" disabled>
-                    <label class="form-label">Check out Date:</label>
-                    <input class="form-control" type="text" value="${chkout}" disabled>
-                    <label class="form-label">Adult (person)</label>
-                    <input class="form-control" type="text" value="${adult}" disabled>
-                    <label class="form-label">Children (person)</label>
-                    <input class="form-control" type="text" value="${children}" disabled>
-                    <label class="form-label">Firstname</label>
-                    <input class="form-control" type="text" value="${fname}" disabled>
-                    <label class="form-label">Lastname</label>
-                    <input class="form-control" type="text" value="${lname}" disabled>
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="text" value="${email}" disabled>
-                    <label class="form-label">Phone</label>
-                    <input class="form-control" type="text" value="${phone}" disabled>
-                    <label class="form-label">Total Price</label>
-                    <input class="form-control" type="text" value="${totalPrice}" disabled>
+                    <label class="form-label">Location</label><br>
+                    <input class="form-control" type="text" value="${location_name}" disabled><br>
+                    <label class="form-label">Check in Date:</label><br>
+                    <input class="form-control" type="text" value="${chkin}" disabled><br>
+                    <label class="form-label">Check out Date:</label><br>
+                    <input class="form-control" type="text" value="${chkout}" disabled><br>
+                    <label class="form-label">Adult (person)</label><br>
+                    <input class="form-control" type="text" value="${adult}" disabled><br>
+                    <label class="form-label">Children (person)</label><br>
+                    <input class="form-control" type="text" value="${children}" disabled><br>
+                    <label class="form-label">Firstname</label><br>
+                    <input class="form-control" type="text" value="${fname}" disabled><br>
+                    <label class="form-label">Lastname</label><br>
+                    <input class="form-control" type="text" value="${lname}" disabled><br>
+                    <label class="form-label">Email</label><br>
+                    <input class="form-control" type="text" value="${email}" disabled><br>
+                    <label class="form-label">Phone</label><br>
+                    <input class="form-control" type="text" value="${phone}" disabled><br>
+                    <label class="form-label">Total Price</label><br>
+                    <input class="form-control" type="text" value="${totalPrice}" disabled><br>
                     </div>`,
                     // '<label class="form-label"><b>Booking Detail</b></label><hr class="hr">'+
                     // `
@@ -565,6 +732,7 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
                     focusConfirm: false,
                     preConfirm: () => {
+                        Swal.fire('Booking Complete!', '', 'success')
                         return [
                             fetch(url + '/booking', {
                                 method: 'POST',
@@ -582,15 +750,25 @@ function selectOption(location_name, site_price, tent_price) {
                                     "lastname": lname,
                                     "email": email,
                                     "phone": phone,
+                                    "tent": tent,
+                                    "tent_amount": tent_amount,
+                                    "fishing": '',
+                                    "moo-gata": moo_gata_size,
+                                    "moo-gata-size": size,
                                     "total price": totalPrice
 
                                 })
 
+
                             }).then(response => response.json())
                                 .then(data => console.log(data))
                                 .catch(error => console.log(error))
+
+
                         ]
-                    }
+
+                    },
+
                 })
                 // if (fname == '') {
                 //     Swal.fire(JSON.stringify(formValues))
@@ -719,10 +897,16 @@ function selectOption(location_name, site_price, tent_price) {
         preConfirm: () => { //!fill all condition and change class name
 
             if (document.getElementById('fname').value != '' && document.getElementById('lname').value != '' && document.getElementById('email').value != '' && document.getElementById('phone').value != '') {
+
                 var fname = document.getElementById('fname').value
                 var lname = document.getElementById('lname').value
                 var email = document.getElementById('email').value
                 var phone = document.getElementById('phone').value
+                if (location_name == 'Phu chee dao') {
+                    if (document.getElementById('tent').value != 0 && document.getElementById('tent-amount').value == 0) {
+                        Swal.showValidationMessage('Tent Amount Required')
+                    }
+                }
                 if (phone.length != 10) {
                     Swal.showValidationMessage('Phone Number is Incorrect')
                 } else {
