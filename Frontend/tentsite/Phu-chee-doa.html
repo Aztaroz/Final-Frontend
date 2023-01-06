@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Phu chee dao | RESERVE A TENT</title>
+  <title>PHU CHEE DAO | RESERVE A TENT</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,57 +17,108 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <script src="test.js"></script>
+
 
   <style>
     /* Style the body */
     body {
-      background-image: url(https://s359.kapook.com/pagebuilder/88bb96f1-d403-4430-bb0f-51e17010c802.jpg);
-      background-size: cover;
+      font-family: 'Noto Sans Thai', sans-serif;
+      background-image: url(https://raw.githubusercontent.com/Aztaroz/Final-Frontend/main/Frontend/tentsite/img/Phu-chee-dao.png);
       background-repeat: no-repeat;
+      background-size: cover;
       background-position: center;
-      font-family: Arial;
-      margin: 0;
     }
 
-    .bg-image {
-      background-image: url(https://s359.kapook.com/pagebuilder/88bb96f1-d403-4430-bb0f-51e17010c802.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      font-family: Arial;
-      margin: 0;
-      filter: blur(8px);
-      -webkit-filter: blur(8px);
-
+    .header-container {
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* Header/Logo Title */
-    .header {
-      padding: 5px;
-      text-align: center;
-      background: #198754;
+    .textHeader {
+      position: relative;
       color: white;
-      font-size: 30px;
+      font-size: 80px;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      top: -10%;
     }
 
-    /* Page Content */
-    .content {
-      padding: 20px;
+    .scroll-downs {
+      position: absolute;
+      top: 1%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 34px;
+      height: 55px;
     }
 
-    /* Boox */
-    div.boox {
-      background-color: lightgrey;
-      width: 800px;
-      border: 5px solid green;
-      padding: 50px;
-      margin: 10px;
+    .mousey {
+      width: 3px;
+      padding: 10px 15px;
+      height: 35px;
+      border: 2px solid #fff;
+      border-radius: 25px;
+      box-sizing: content-box;
+    }
+
+    .scroller {
+      width: 3px;
+      height: 10px;
+      border-radius: 25%;
+      background-color: #fff;
+      animation-name: scroll;
+      animation-duration: 2.2s;
+      animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+      animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+
+        transform: translateY(15px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+
+        transform: translateY(15px);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex fixed-to"
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex fixed-to"
     style="background: rgba(26, 26, 26, 0.2);">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><i class="fa-sharp fa-solid fa-location-dot"></i>&nbsp;เชียงราย</a>
@@ -93,12 +144,13 @@
       </div>
     </div>
   </nav>
-  <center>
+
+
   <div class="header-container">
     <div class="textHeader">
-      <h1 class="textHeader" style="font-size: 80px; color: white;">
+      <h1 class="textHeader">
         <i class="fa-solid fa-tents"></i>
-        Camping is life
+        PHU CHEE DAO
         <i class="fa-solid fa-tents"></i>
       </h1>
     </div>
@@ -108,33 +160,137 @@
       </div>
     </div>
   </div>
-  </center>
-  <br>
-  <br>
-  <center>
-    <div class="card" style="width: 1000px;">
-      <img src="https://s359.kapook.com/pagebuilder/88bb96f1-d403-4430-bb0f-51e17010c802.jpg" class="card-img"
-        alt="...">
-      <div class="card-img-overlay">
-        <h5 class="card-title">💚 Phu Chee Dao Larn View Resort, Chiang Rai Province 💚</h5>
+  <br><br>
+
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card bg-dark text-white border-0">
+          <img
+            src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t1.6435-9/139948236_1659016970951988_5609439946903752712_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeF81fP2KD7rafRRWt2htNems5L7sIl-cy2zkvuwiX5zLdqjrlhG7_NHSQ_PNcDuoivq8FifRohhca1S4Wc-fBod&_nc_ohc=u3vVsM5goQAAX-RsJkJ&tn=jAozJJeVZqnmoSxN&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfBBg9xNwrTqHcIq0EpBcIPYqPPBV-wAXZ-bCPXRi0SUZA&oe=63DF20D9"
+            class="card-img " alt="...">
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Who wants to sleep in fog like this? Only 400 meters from Phu Chee Dao</h5>
-        <hr>
-        <p class="card-text"> - ⛺️ Rent a tent 500 baht with a full set of mattresses including breakfast 🍲 <br>
-          - 🏕 Renting a tent for 250 baht Accommodation is divided into zones. A,B,C,D(Dream Stay Zone B ) <br>
-          - 🏡 The room during this period is 1,200 baht including breakfast 🍲 <br>
-          - 🥢 Grilled pork, big set 500 baht Small set 300 baht (very delicious) 🥢 <br><br>
-          📍: GPS: Phu Chee Dao Larn View, Por Subdistrict, Wiang Kaen District, Chiang Rai 57310 :📍 </p><br>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-white border-0">
+          <img
+            src="https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.6435-9/139878521_1659017330951952_4404485501328356154_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGnrMRJ13-ObALanwVGu1xpfQQy8ROMd2l9BDLxE4x3aQccv2O52JVvMGVixCN6VbtGQzKKiHx6krKpy1hgHrAh&_nc_ohc=VHkW4rLaGSwAX_Tldgv&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfC2Te__jYA5mwJH8Z-RRNEg7L9Dg_U4C_A7z8DY-mFBpQ&oe=63DF2A1D"
+            class="card-img " alt="...">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-white border-0">
+          <img
+            src="https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.6435-9/140083582_1659017200951965_671399496577892798_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFgRjNrI9-yg3NCmmvMYdcCueRqmgFnyju55GqaAWfKO1Iz6smz1o0HDVkyCaB3sONOc6MbFTlLhr-qYJCpsSt9&_nc_ohc=FK2VEfy6edsAX-RJydu&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfD9qb7P0Pn8c-MrERqo_0KgKU4C5b4iqIQJjHFXIQIZpg&oe=63DF16C5"
+            class="card-img " alt="...">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-white border-0">
+          <img
+            src="https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.6435-9/141008846_1659016864285332_9184504006721290542_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGFGMnBH7OgA-FM-L4VyAqdX5l7D8k0iF9fmXsPyTSIXy0qB3mrt_O-pKt7FMrjGO-wQq7PJ0VdgLpDra0WBMjP&_nc_ohc=q2ofLnTXvPIAX_UBcGP&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfBhBzMDeqd6r5vmVnKIKqJAnEygGu4_0N7GvL1Eu5qGxw&oe=63DF2B4E"
+            class="card-img " alt="...">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-white border-0">
+          <img
+            src="https://scontent.fbkk5-1.fna.fbcdn.net/v/t1.6435-9/140619806_1659016667618685_8742888796586934479_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeG6tt9kMJAls2MkRtyAtfTNtMfoZzBVc-C0x-hnMFVz4OQ_ScD8ybvq37nVfqxCM7SsrVu4ON9bMddglW7CZVME&_nc_ohc=iGiSCWz-uV0AX9ks0P2&tn=jAozJJeVZqnmoSxN&_nc_ht=scontent.fbkk5-1.fna&oh=00_AfDHHMsSaL-mKUyP-LzzR_rjYQXjnBZOdnSH3YlFs5c3tw&oe=63DF25B8"
+            class="card-img " alt="...">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-white border-0">
+          <img
+            src="https://scontent.fbkk5-5.fna.fbcdn.net/v/t1.6435-9/139925840_1659016927618659_875892297830712279_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeH0mmhM2BhqVC6sPaApvrsFvccaImeLoo-9xxoiZ4uij3tuli-mXf_rTM9JMU0PF783L3aObZrt8d3c79U-2pXz&_nc_ohc=iLcf541CU7gAX-oAH5g&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfBg7N3sTKjfrrrEh_PuhtWp_pUPlefwb7wKOG08D7PnhQ&oe=63DF2040"
+            class="card-img " alt="...">
+        </div>
       </div>
     </div>
+  </div><br>
+
+
+  <center>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          Dacilities
+        </div>
+        <div class="card-body">
+          <p class="card-text">📶: Free WiFi | ⚡: No Electricity service</p>
+        </div>
+      </div><br>
+
+      <div class="card">
+        <div class="card-header">
+          Details
+        </div>
+        <div class="card-body">
+          <p class="card-text"><small class="text-muted">
+              ⛺️ Rent a tent 500 baht with a full set of mattresses including breakfast. 🍲 <br>
+              🏕 Rent a tent for 250 baht, not including breakfast. Accommodation is divided into zones. A,B,C,D(Dream
+              Stay Zone B )🏕 <br>
+              🏡The room during this period is 1,200 baht including breakfast🍲 <br>
+              🥢 Grilled pork, big set 500 baht Small set 300 baht (very delicious)🥢 <br><br>
+              📍: ภูชี้ดาวลานวิว ตำบล ปอ อำเภอ เวียงแก่น เชียงราย 57310 :📍 </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </center><br>
 
 
 
 
-    <center>
 
-    </center>
+
+
+
+
+
+  <div
+    style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
+    <footer class="text-white text-center text-lg-start shadow-5-strong">
+      <br><br>
+      <div class="row">
+        <div class="col-xl-2"></div>
+        <div class="col-xl-8">
+          <h5 class="text-uppercase mb-4">About us</h5>
+        </div>
+        <div class="col-xl-2"></div>
+
+        <div class="col-xl-2"></div>
+        <div class="col-xl-4">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto iure consequatur vel.
+          Earum reprehenderit, ducimus delectus praesentium eum alias aliquam!<br><br>
+          by TFBF company<br><br>
+        </div>
+        <div class="col-xl-4">
+          <i class="fa-solid fa-house"></i>&nbsp Walailak University top 11 world ranking<br><br>
+          <i class="fa-solid fa-envelope"></i>&nbsp walailak555@gmail.cum<br><br>
+          <i class="fa-solid fa-phone"></i>&nbsp 1111111111<br>
+        </div>
+        <div class="col-xl-2"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 ITD:
+            <a class="text-white" href="#">INFORMATION TECHNOLOGY AND DIGITAL INNOVATION</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+
 
 </body>
 

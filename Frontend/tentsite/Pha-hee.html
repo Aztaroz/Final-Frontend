@@ -24,10 +24,10 @@
     /* Style the body */
     body {
       font-family: 'Noto Sans Thai', sans-serif;
-      background-image: url(https://img.freepik.com/premium-photo/ban-pha-hee-mae-sai-chiang-rai-thailand-ban-pha-hee-ban-pha-hee-lahu-is-mountain-village_97567-1257.jpg?w=2000);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      background-image: url(https://raw.githubusercontent.com/Aztaroz/Final-Frontend/main/Frontend/tentsite/img/Pha-hee-2.png);
     }
 
     .header-container {
@@ -46,6 +46,73 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       top: -10%;
+    }
+
+    .scroll-downs {
+      position: absolute;
+      top: 1%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 34px;
+      height: 55px;
+    }
+
+    .mousey {
+      width: 3px;
+      padding: 10px 15px;
+      height: 35px;
+      border: 2px solid #fff;
+      border-radius: 25px;
+      box-sizing: content-box;
+    }
+
+    .scroller {
+      width: 3px;
+      height: 10px;
+      border-radius: 25%;
+      background-color: #fff;
+      animation-name: scroll;
+      animation-duration: 2.2s;
+      animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+      animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+
+        transform: translateY(15px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+
+        transform: translateY(15px);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -83,7 +150,7 @@
     <div class="textHeader">
       <h1 class="textHeader">
         <i class="fa-solid fa-tents"></i>
-        Camping is life
+        PHA HEE VILLAGE
         <i class="fa-solid fa-tents"></i>
       </h1>
     </div>
@@ -93,13 +160,14 @@
       </div>
     </div>
   </div>
+  <br><br>
 
   <div class="container">
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card bg-dark text-white border-0">
           <img
-            src="https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/314081221_564963055609323_6227849846621684995_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH8XoFOmy_RdkQCz55TAEaycg9elN93-CxyD16U33f4LG8tztQb83ulI15DeeGpK3YyWcXQJhE4ogq7ypdsPJvc&_nc_ohc=rE0Uvv4kzbgAX8ZVeq1&_nc_ht=scontent.fbkk5-6.fna&oh=00_AfBAry86tQIofra7grzbUXpxWO6JIQoIiimAhHT9UfxAMg&oe=63BCC731"
+            src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/295446092_395046596057888_7528249645670201669_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFuZMaF158WoawK28ejUvssg7fYQIv6teaDt9hAi_q15nBJ8_pOttOB1fu0Yw8T7JlBilAvHRPhGFsZPwAEfrey&_nc_ohc=lXNgNN4YtGEAX9cjS-5&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfBN3bu6hOEBRnt58ZAcN5WlFw-e6iXSOaKTno5pI6fz3g&oe=63BD83EA"
             class="card-img " alt="...">
         </div>
       </div>
@@ -107,7 +175,7 @@
       <div class="col-md-4">
         <div class="card bg-dark text-white border-0">
           <img
-            src="https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/314325104_564962958942666_4699296779034994148_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHOmBJPQSP_uNTz-7H7Hah_qGM-1rWC4QuoYz7WtYLhC_T8Z7Q9jbK_22OMrIriyEX4fgfHsa_koclmRJz2AUWg&_nc_ohc=ambMAwbc5gsAX80R72r&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfCPrKFgnS5gm5KbQNwVLpELvxy1Rfe3m7g56LueWf2Jwg&oe=63BCB7D2"
+            src="https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/295496783_395046639391217_3848205978455604061_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGLdsl-vAmAVyHRocZyx0dyzMD1N2g_hrvMwPU3aD-Gu5564BhmM_WoFGJzXG74tZagowjWaPbr0CYUCzg_reIJ&_nc_ohc=bGCTDrbEDWAAX9FDrZc&_nc_ht=scontent.fbkk5-6.fna&oh=00_AfDj-NfDfM7iAcBgNx-LHudHG5egnhtQz59Bx0vx9rBuLw&oe=63BC462E"
             class="card-img " alt="...">
         </div>
       </div>
@@ -115,7 +183,7 @@
       <div class="col-md-4">
         <div class="card bg-dark text-white border-0">
           <img
-            src="https://scontent.fbkk5-8.fna.fbcdn.net/v/t39.30808-6/313960032_564962838942678_8563926694276293648_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEhOe0Uh6TP0fek7SvYHczAF3yntKJlhdIXfKe0omWF0rrAIlgY7WDFwUvPohRAoXFogy174hjjk4a2ruGzZM8s&_nc_ohc=tCIDdrk3gz8AX8Alo80&_nc_oc=AQlTcPyjIB_tjZzB-vJc9ILFMEU4mCRR5tgLDnbhcVMayHlVI_1M7bHl5sYXKLoSff1nRu78Kcjtxok62uKYViu-&_nc_ht=scontent.fbkk5-8.fna&oh=00_AfDOjjZbqLExkigkPAPCqH0ai-oMH2PpvFg9WnQRBcuebg&oe=63BCB936"
+            src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/295565737_395046836057864_5378524538547986058_n.jpg?stp=cp6_dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGqScIu2XMg6WNlR45BCuPecyNUJZ4KecxzI1Qlngp5zLmyl0ixWTHEpe_D2jCJV7p0tkjDfVqk7YoLQxyHPFFF&_nc_ohc=rhM0_K5RvHYAX_TFj2F&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfADcUf3a0uQUFuFeWgSzF6VhbGKALphjDhyqkzKdg-Rag&oe=63BBFF6A"
             class="card-img " alt="...">
         </div>
       </div>
@@ -123,7 +191,7 @@
       <div class="col-md-4">
         <div class="card bg-dark text-white border-0">
           <img
-            src="https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/314034600_564963098942652_8534603884142545599_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHU37yr4cw8i9GWh_F_Ce5hm6078X8aQKibrTvxfxpAqMV-R5TtpRg-JvpSbpSmJ2cA2wqy6971zahteyDNeKK3&_nc_ohc=7kZGM0Hn7qMAX8wXSaR&_nc_ht=scontent.fbkk5-6.fna&oh=00_AfCjJtxX0xthAlov2uA7g97r_gSnLM07rT_uJO-rA_frZg&oe=63BBC186"
+            src="https://scontent.fbkk5-3.fna.fbcdn.net/v/t39.30808-6/295479041_395046709391210_7037507894556911648_n.jpg?stp=cp6_dst-jpg&_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFCwHFyx1xZmO4SjD2kZOgoh1-A8pcVbLeHX4DylxVstz6AZ5YFpWdGu2fljzRtcDRz0RvLIOlOWbFnRVOyqOzt&_nc_ohc=zPh9HM5tyOsAX_p2SvG&_nc_ht=scontent.fbkk5-3.fna&oh=00_AfCuqc6aqbYxKrU4php27PznfrUaOrjHGxCj2uMQ5CRw2g&oe=63BBDAAE"
             class="card-img " alt="...">
         </div>
       </div>
@@ -131,7 +199,7 @@
       <div class="col-md-4">
         <div class="card bg-dark text-white border-0">
           <img
-            src="https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/314145253_564962642276031_1209139159524834064_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHVdwtxW50HY50xA7vO3LbopArg0333y_-kCuDTfffL__0WSetMc30h-ji-Thgq4hBmHWEOETrI60pFJi2FBRjZ&_nc_ohc=a6QWal1HJ8UAX-JPNM9&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfDgkEBPQaEhvEWBnjCDAuF4XYTzxMpWBpCqfGMJQVtZOQ&oe=63BC97C6"
+            src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/295708408_395046856057862_970866986089624052_n.jpg?stp=cp6_dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGbjRWoZS-6sXDIMY__SGOP63LMcpGcaQbrcsxykZxpBo8m9yf0wPo7Yan_CYe4HWXtNKG7FO_yeplUrUFdLxsp&_nc_ohc=gvmnPGwZfZAAX_ZhsqK&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCUjiRMrpio83oUzYMQR6FbDAwRGP5fC-3RDT0TC2VVuQ&oe=63BD3FD8"
             class="card-img " alt="...">
         </div>
       </div>
@@ -139,7 +207,7 @@
       <div class="col-md-4">
         <div class="card bg-dark text-white border-0">
           <img
-            src="https://scontent.fbkk5-3.fna.fbcdn.net/v/t39.30808-6/314079061_564962708942691_2418066262203629164_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEbqbNFIt9oGE9dOg4IRUGOSgpCN4ssq2hKCkI3iyyraFmVPL-GfnddRWkSlcoko9FC94h2CivhwX1d4E_etGpF&_nc_ohc=uWEXDmNyJ7MAX_z8HOh&_nc_ht=scontent.fbkk5-3.fna&oh=00_AfD90jgoYgWTaNT7GUQ0oezjRh0cqOisjpOHxQ0WG_4RmA&oe=63BBBEF6"
+            src="https://scontent.fbkk5-4.fna.fbcdn.net/v/t39.30808-6/295655841_395046929391188_6426010704566389164_n.jpg?stp=cp6_dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFDAG9t8Nr2zefN6yUPihz9xeQqHaECkJzF5CodoQKQnPKYkiyBzp-q2Lw2xuHW803tMg6E35SYlxCTA1BWVSjW&_nc_ohc=o2IukiO9eTQAX8vNjHh&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfCVVQ-9_I9CFtd1ExeRv3lDbssQdWdKtjWBBP9mvL6reg&oe=63BD4576"
             class="card-img " alt="...">
         </div>
       </div>
@@ -151,7 +219,7 @@
     <div class="container">
       <div class="card">
         <div class="card-header">
-          facilities
+          Dacilities
         </div>
         <div class="card-body">
           <p class="card-text">📶: Free WiFi | ⚡: Electricity service</p>
@@ -163,13 +231,13 @@
           Details
         </div>
         <div class="card-body">
-          <p class="card-text"><small class="text-muted"> - 🏠The 1st house will be a wooden house designed in country
-              style, in a western style
-              house in a barn. <br>
-              - 🏠The 2nd house will be a triangular house, this house is in Japanese style. <br>
-              - 🏠The 3rd house will be a loft style house <br>
-              - There are all facilities here.<br><br>
-              📍: GPS: 586 Mae Yao, Mueang Chiang Rai District, Chiang Rai 57100 :📍 </p>
+          <p class="card-text"><small class="text-muted">
+              - 🏞 Here he also has a service. 🏞 <br>
+              - 🏞 Tent accommodation, tents. 🏞 <br>
+              - 🏞 Cafes and restaurants. 🏞 <br>
+              - 🏞 Mountain View Coffee Roaster. 🏞 <br>
+              - 🏞 Organic vegetable garden. 🏞 <br><br>
+              📍: 9R2G+PG6, 1149, Pong Ngam, Mae Sai District, Chiang Rai 57130 :📍 </p>
           </p>
         </div>
       </div>

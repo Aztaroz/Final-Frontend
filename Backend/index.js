@@ -368,15 +368,13 @@ function selectOption(location_name, site_price, tent_price) {
     var adult = sessionStorage.getItem('adult')
     var children = sessionStorage.getItem('children')
 
-    function totalPrice(location_name) {
+    function totalPrice(location_name, fname, lname, email, phone) {
         var tentsite = parseInt(document.getElementById('tentsite').value)
 
-
-
-        var fname = document.getElementById('fname').value
-        var lname = document.getElementById('lname').value
-        var email = document.getElementById('email').value
-        var phone = document.getElementById('phone').value
+        // var fname = document.getElementById('fname').value
+        // var lname = document.getElementById('lname').value
+        // var email = document.getElementById('email').value
+        // var phone = document.getElementById('phone').value
 
         site_price = parseInt(site_price)
         tent_price = parseInt(tent_price)
@@ -391,7 +389,7 @@ function selectOption(location_name, site_price, tent_price) {
                     title: 'Confirmation Your Booking',
                     html:
                         `<div class="mb-3">
-                    <label class="form-label">Location</label>
+                    <span class="form-label">Location</span>
                     <input class="form-control" type="text" value="${location_name}" disabled>
                     <label class="form-label">Check in Date:</label>
                     <input class="form-control" type="text" value="${chkin}" disabled>
@@ -528,11 +526,11 @@ function selectOption(location_name, site_price, tent_price) {
                 var tent_amount = document.getElementById('tent-amount').value
                 if (tent_amount == '') {
                     totalPrice = site_price + moo_gata_size
-                }else{
+                } else {
                     tent_amount = parseInt(tent_amount)
                     totalPrice = site_price + moo_gata_size + (tent * tent_amount)
                 }
-                
+
                 Swal.fire({
                     title: 'Confirmation Your Booking',
                     html:
@@ -605,55 +603,67 @@ function selectOption(location_name, site_price, tent_price) {
 
     }
 
+    // Select Option
     switch (location_name) {
         case 'Camping is life': // selectOption('Camping is life','200')
             html +=
                 `<div class="mb-3">
             <label class="form-label">Rent a tent site</label>
+            <br>
+                <label class="form-label">You Entered : Adult <font color="#198754"><b> ${adult} </b></font> and Childred <font color="#198754"><b> ${children} </b></font> <font color="#198754"><b>(${(parseInt(adult) + parseInt(children)) * site_price} THB)</b></font></label>
             <input class="form-control" type="text" value="${site_price} THB" disabled id="tentsite">
             <br>
             <label class="form-label">Fishing</label>
             <select class="form-control" id="fishing">
-                <option value="0" disabled selected>Select Your Option...</option>
+                <option value="0" selected>Select Your Option...</option>
                 <option value="200">Yes (200 THB)</option>
             </select>
             <br>
-            <label class="form-label">Firstname</label>
-            <input class="form-control" type="text" id="fname">
+                <br>
+                <h3><b>Contact Info</b>&nbsp;<font color="#F27474">(Required)</font></h3>
+                <br>
+            <label class="form-label">Firstname&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="Enter your firstname" id="fname">
             <br>
-            <label class="form-label">Lastname</label>
-            <input class="form-control" type="text" id="lname">
+            <label class="form-label">Lastname&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="Enter your lastname" id="lname">
             <br>
-            <label class="form-label">Email</label>
-            <input class="form-control" type="text" id="email">
+            <label class="form-label">Email&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="example@gmail.com" id="email">
             <br>
-            <label class="form-label">Phone</label>
-            <input class="form-control" type="tel" id="phone">
+            <label class="form-label">Phone Number&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="tel" placeholder="eg.0987654321" id="phone">
             </div>`
             break;
         case 'Pha hee': // selectOption('Pha hee','900')
             html +=
                 `<div class="mb-3">
                 <label class="form-label">Rent a tent site (Free Tent) + Shelter</label>
+                <br>
+                <label class="form-label">You Entered : Adult <font color="#198754"><b> ${adult} </b></font> and Childred <font color="#198754"><b> ${children} </b></font> <font color="#198754"><b>(${(parseInt(adult) + parseInt(children)) * site_price} THB)</b></font></label>
                 <input class="form-control" type="text" value="${site_price} THB / person" disabled id="tentsite">
+                
                 <br>
                 <label class="form-label">Thai barbecue (Moo-gata)</label>
                 <select class="form-control" id="moo-gata">
-                    <option value="0" disabled selected>Select Your Option...</option>
+                    <option value="0" selected>Select Your Option...</option>
                     <option value="300">Yes (300 THB)</option>
                 </select>
                 <br>
-            <label class="form-label">Firstname</label>
-            <input class="form-control" type="text" id="fname">
+                <br>
+                <h3><b>Contact Info</b>&nbsp;<font color="#F27474">(Required)</font></h3>
+                <br>
+            <label class="form-label">Firstname&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="Enter your firstname" id="fname">
             <br>
-            <label class="form-label">Lastname</label>
-            <input class="form-control" type="text" id="lname">
+            <label class="form-label">Lastname&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="Enter your lastname" id="lname">
             <br>
-            <label class="form-label">Email</label>
-            <input class="form-control" type="text" id="email">
+            <label class="form-label">Email&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="example@gmail.com" id="email">
             <br>
-            <label class="form-label">Phone</label>
-            <input class="form-control" type="tel" id="phone">
+            <label class="form-label">Phone Number&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="tel" placeholder="eg.0987654321" id="phone">
                 </div>`
             break;
 
@@ -661,12 +671,14 @@ function selectOption(location_name, site_price, tent_price) {
             html +=
                 `<div class="mb-3">
                 <label class="form-label">Rent a tent site</label>
+                <br>
+                <label class="form-label">You Entered : Adult <font color="#198754"><b> ${adult} </b></font> and Childred <font color="#198754"><b> ${children} </b></font></label>
                 <input class="form-control" type="text" value="${site_price} THB" disabled id="tentsite">
                 <br>
                 <div class="mb-3">
                 <label class="form-label">Rent a tent</label>
                 <select class="form-control" id="tent">
-                    <option value="0" disabled selected>Select Your Option...</option>
+                    <option value="0" selected>Select Your Option...</option>
                     <option value="${tent_price}">Yes (${tent_price} THB)</option>
                 </select>
 
@@ -675,33 +687,53 @@ function selectOption(location_name, site_price, tent_price) {
                 <br>
                 <label class="form-label">Thai barbecue (Moo-gata)</label>
                 <select class="form-control" id="moo-gata-size">
-                    <option value="0" disabled selected>Select Your Option...</option>
+                    <option value="0" selected>Select Your Option...</option>
                     <option value="300">Size : Small (300 THB)</option>
                     <option value="500">Size : Large (500 THB)</option>
                 </select>
                 <br>
-            <label class="form-label">Firstname</label>
-            <input class="form-control" type="text" id="fname">
+                <br>
+                <h3><b>Contact Info</b>&nbsp;<font color="#F27474">(Required)</font></h3>
+                <br>
+            <label class="form-label">Firstname&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="Enter your firstname" id="fname">
             <br>
-            <label class="form-label">Lastname</label>
-            <input class="form-control" type="text" id="lname">
+            <label class="form-label">Lastname&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="Enter your lastname" id="lname">
             <br>
-            <label class="form-label">Email</label>
-            <input class="form-control" type="text" id="email">
+            <label class="form-label">Email&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="text" placeholder="example@gmail.com" id="email">
             <br>
-            <label class="form-label">Phone</label>
-            <input class="form-control" type="tel" id="phone">
+            <label class="form-label">Phone Number&nbsp;<font color="#F27474">*</font></label>
+            <input class="form-control" type="tel" placeholder="eg.0987654321" id="phone">
                 </div>`
             break;
         default:
             break;
     }
+
     Swal.fire({
         title: 'Select your additional',
         html: html,
         focusConfirm: false,
-        preConfirm: () => {
-            totalPrice(location_name)
+        preConfirm: () => { //!fill all condition and change class name
+
+            if (document.getElementById('fname').value != '' && document.getElementById('lname').value != '' && document.getElementById('email').value != '' && document.getElementById('phone').value != '') {
+                var fname = document.getElementById('fname').value
+                var lname = document.getElementById('lname').value
+                var email = document.getElementById('email').value
+                var phone = document.getElementById('phone').value
+                if (phone.length != 10) {
+                    Swal.showValidationMessage('Phone Number is Incorrect')
+                } else {
+                    totalPrice(location_name, fname, lname, email, phone)
+                    // totalPrice(location_name,fname,lname,email,phone)
+                }
+            } else {
+                Swal.showValidationMessage('Plese Fill Out All Form')
+                // Swal.resetValidationMessage()
+            }
+
         }
     });
 }
