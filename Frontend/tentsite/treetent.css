@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap');
+
 .header-container {
   height: 50vh;
   display: flex;
@@ -47,6 +49,21 @@
   animation-iteration-count: infinite;
 }
 
+.map-container-3 {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-container-3 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 @-webkit-keyframes scroll {
   0% {
     opacity: 0;
@@ -83,17 +100,37 @@
   }
 }
 
-.map-container-3 {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
+
+
+
+@media only screen and (min-width: 390px) {
+
+  .textHeader {
+    font-size: 25px;
+  }
+
 }
 
-.map-container-3 iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
+@media only screen and (max-width: 819px) {
+
+  .textHeader {
+    font-size: 30px;
+  }
+
 }
+
+/*Ipad Air*/
+
+@media only screen and (min-width: 820px) {
+
+  .textHeader {
+    font-size: 50px;
+  }
+
+}
+
+
+/* @media only screen and (min-width: 1180px) and (max-width: 1180px) {} */
+
+
+/*Ipad Air*/

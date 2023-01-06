@@ -274,3 +274,69 @@ body {
 	background: rgba(26, 26, 26, 0.7);
 	position: absolute;
 }
+
+
+/*Ipad Air*/
+
+@media only screen and (max-width: 820px) {
+
+	/*Home*/
+	.booking-form>.booking-bg {
+		display: none;
+	}
+
+	.booking-form>form {
+		margin-left: 0px;
+	}
+
+	.booking-form {
+
+		top: 20%;
+		left: 0;
+	}
+
+	.scroll-downs {
+		top: 50%;
+	}
+
+	.coverContent {
+		margin-top: 50%;
+	}
+
+	/*Home*/
+	
+}
+
+
+@media only screen and (min-width: 1180px) and (max-width: 1180px) {
+
+	/*Home*/
+	.booking-form>.booking-bg {
+		display: none;
+	}
+
+	.booking-form>form {
+		margin-left: 0px;
+	}
+
+	.booking-form {
+
+		top: 20%;
+		left: 0;
+	}
+
+	.scroll-downs {
+		top: 40%;
+	}
+
+	.coverContent {
+		margin-top: 20%;
+	}
+
+	/*Home*/
+
+}
+
+
+
+/*Ipad Air*/

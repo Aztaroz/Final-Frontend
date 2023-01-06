@@ -603,6 +603,7 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input3" class="swal2-input" value="${adult}"disable>` +
                     // `<input id="swal-input4" class="swal2-input" value="${children}"disable>`+
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
+                    showCancelButton: true,
                     focusConfirm: false,
                     preConfirm: () => {
                         Swal.fire('Booking Complete!', '', 'success')
@@ -623,11 +624,11 @@ function selectOption(location_name, site_price, tent_price) {
                                     "lastname": lname,
                                     "email": email,
                                     "phone": phone,
-                                    "tent": '',
-                                    "tent_amount": '',
+                                    "tent": 'N/A',
+                                    "tent_amount": 'N/A',
                                     "fishing": fishing,
-                                    "moo-gata": '',
-                                    "moo-gata-size": '',
+                                    "moo-gata": 'N/A',
+                                    "moo-gata-size": 'N/A',
                                     "total price": totalPrice
 
                                 })
@@ -679,6 +680,7 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input4" class="swal2-input" value="${children}"disable>`+
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
                     focusConfirm: false,
+                    showCancelButton: true,
                     preConfirm: () => {
                         Swal.fire('Booking Complete!', '', 'success')
                         return [
@@ -698,11 +700,11 @@ function selectOption(location_name, site_price, tent_price) {
                                     "lastname": lname,
                                     "email": email,
                                     "phone": phone,
-                                    "tent": '',
-                                    "tent_amount": '',
-                                    "fishing": '',
+                                    "tent": 'N/A',
+                                    "tent_amount": 'N/A',
+                                    "fishing": 'N/A',
                                     "moo-gata": moo_gata,
-                                    "moo-gata-size": '',
+                                    "moo-gata-size": 'N/A',
                                     "total price": totalPrice
 
                                 })
@@ -769,6 +771,7 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input4" class="swal2-input" value="${children}"disable>`+
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
                     focusConfirm: false,
+                    showCancelButton: true,
                     preConfirm: () => {
                         Swal.fire('Booking Complete!', '', 'success')
                         return [
@@ -790,7 +793,7 @@ function selectOption(location_name, site_price, tent_price) {
                                     "phone": phone,
                                     "tent": tent,
                                     "tent_amount": tent_amount,
-                                    "fishing": '',
+                                    "fishing": 'N/A',
                                     "moo-gata": moo_gata_size,
                                     "moo-gata-size": size,
                                     "total price": totalPrice
@@ -899,7 +902,7 @@ function selectOption(location_name, site_price, tent_price) {
                 </select>
 
                 <label class="form-label">Amount</label>
-                <input class="form-control" type="number" max="10" min="0" id="tent-amount">
+                <input class="form-control" type="number" max="10" min="0" id="tent-amount" placeholder="Amount of Tent (Maximum 10)">
                 <br>
                 <label class="form-label">Thai barbecue (Moo-gata)</label>
                 <select class="form-control" id="moo-gata-size">
@@ -931,6 +934,7 @@ function selectOption(location_name, site_price, tent_price) {
     Swal.fire({
         title: 'Select your additional',
         html: html,
+        showCancelButton: true,
         focusConfirm: false,
         preConfirm: () => { //!fill all condition and change class name
 
