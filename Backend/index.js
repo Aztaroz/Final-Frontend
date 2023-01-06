@@ -610,7 +610,7 @@ function selectOption(location_name, site_price, tent_price) {
                 `<div class="mb-3">
             <label class="form-label">Rent a tent site</label>
             <br>
-                <label class="form-label">You Entered : Adult <font color="#198754"><b> ${adult} </b></font> and Childred <font color="#198754"><b> ${children} </b></font> <font color="#198754"><b>(${(parseInt(adult) + parseInt(children)) * site_price} THB)</b></font></label>
+                <label class="form-label">You Entered : Adult <font color="#198754"><b> ${adult} </b></font> and Childred <font color="#198754"><b> ${children} </b></font> <font color="#198754"></font></label>
             <input class="form-control" type="text" value="${site_price} THB" disabled id="tentsite">
             <br>
             <label class="form-label">Fishing</label>
