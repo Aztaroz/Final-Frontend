@@ -17,6 +17,10 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <link rel="stylesheet" href="treetent.css">
+
+
+
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="../../Backend/index.js"></script>
@@ -30,106 +34,6 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-    }
-
-    .header-container {
-      height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .textHeader {
-      position: relative;
-      color: white;
-      font-size: 80px;
-      font-weight: 900;
-      text-align: center;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      top: -10%;
-    }
-
-    .scroll-downs {
-      position: absolute;
-      top: 1%;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      width: 34px;
-      height: 55px;
-    }
-
-    .mousey {
-      width: 3px;
-      padding: 10px 15px;
-      height: 35px;
-      border: 2px solid #fff;
-      border-radius: 25px;
-      box-sizing: content-box;
-    }
-
-    .scroller {
-      width: 3px;
-      height: 10px;
-      border-radius: 25%;
-      background-color: #fff;
-      animation-name: scroll;
-      animation-duration: 2.2s;
-      animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
-      animation-iteration-count: infinite;
-    }
-
-    @-webkit-keyframes scroll {
-      0% {
-        opacity: 0;
-      }
-
-      10% {
-
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      100% {
-
-        transform: translateY(15px);
-        opacity: 0;
-      }
-    }
-
-    @keyframes scroll {
-      0% {
-        opacity: 0;
-      }
-
-      10% {
-
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      100% {
-
-        transform: translateY(15px);
-        opacity: 0;
-      }
-    }
-
-    .map-container-3 {
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
-      height: 0;
-    }
-
-    .map-container-3 iframe {
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      position: absolute;
     }
   </style>
 </head>
@@ -257,14 +161,20 @@
               📍: GPS: 586 Mae Yao, Mueang Chiang Rai District, Chiang Rai 57100 :📍
           </p>
           <button class="btn btn-primary w-100" onclick="selectOption('Camping is life','200')">
-            <h4>Booking</h4>
+            <h4>
+              <i class="fa-solid fa-book-open-cover"></i>&nbsp;
+              Booking
+              <i class="fa-solid fa-book-open-cover"></i>&nbsp;
+            </h4>
           </button>
           <br>
           <br>
           <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <h4>
+              <i class="fa-solid fa-map-location-dot"></i>&nbsp;
               Google Map
+              <i class="fa-solid fa-map-location-dot"></i>&nbsp;
             </h4>
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -314,33 +224,33 @@
         </div>
   </center><br>
 
-  <div>
-    <a name="contact"></a>
-    <footer class="bg-light text-center text-white"
-      style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
-      <div class="container p-4 pb-0">
-        <section class="mb-4">
 
-          <a class="btn text-white btn-floating m-1" style="background-color: #b02323;"
-            href="https://www.youtube.com/channel/UCFWaXwOhJ3Ve0_-2zzjK6hw" role="button"><i
-              class="fa-brands fa-youtube"></i></a>
+  <a name="contact"></a>
+  <footer class="bg-light text-center text-white"
+    style="background-image: url(https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/footer-img.jpg?raw=true);">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+
+        <a class="btn text-white btn-floating m-1" style="background-color: #b02323;"
+          href="https://www.youtube.com/channel/UCFWaXwOhJ3Ve0_-2zzjK6hw" role="button"><i
+            class="fa-brands fa-youtube"></i></a>
 
 
 
-          <a class="btn text-white btn-floating m-1" style="background-color: #333333;"
-            href="https://github.com/Aztaroz/Final-Frontend" role="button"><i class="fab fa-github"></i></a>
-        </section>
+        <a class="btn text-white btn-floating m-1" style="background-color: #333333;"
+          href="https://github.com/Aztaroz/Final-Frontend" role="button"><i class="fab fa-github"></i></a>
+      </section>
 
-      </div>
+    </div>
 
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright:
-        <a class="text-white" href="https://www.facebook.com/it.walailak">Information Technology and Digital
-          Innovation.com</a>
-      </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="https://www.facebook.com/it.walailak">Information Technology and Digital
+        Innovation.com</a>
 
-    </footer>
-  </div>
+
+  </footer>
+
 </body>
 
 </html>

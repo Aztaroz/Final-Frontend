@@ -286,9 +286,7 @@ function checkAvailable() {
 }
 
 function loadBooking() {
-
     var html = ``
-
     fetch(url + "/location")
         .then(response => response.json())
         .then(locationData => {
@@ -335,7 +333,7 @@ function loadBooking() {
                             </p>
                             <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
                                 <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                            <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
                         </div>
                         </div>
                     </div>
@@ -345,7 +343,12 @@ function loadBooking() {
                             }
                         }
                     }
-                    document.getElementById('booking1').innerHTML = html
+                    if (html == ``) {
+                        document.getElementById('booking1').innerHTML = `<h1><font color="white">No Booking Data</font></h1>`
+                    } else {
+                        document.getElementById('booking1').innerHTML = html
+                    }
+
 
                     // for (const x of bookingData) {
                     //     for (const y of locationData) {
@@ -493,9 +496,9 @@ function editBooking(id) {
                         }).then(response => response.json())
                             .then(data => console.log(data))
                             .catch(error => console.log(error))
-                        
+
                     ],
-                    Swal.fire('Saved!', '', 'success')
+                        Swal.fire('Saved!', '', 'success')
                 }
             })
 
@@ -505,10 +508,45 @@ function editBooking(id) {
         })
 }
 
+function deleteBooking(id) {
+    console.log(id);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "This will cancel your booking. And you won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: "Don't cancel it",
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, cancel it'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+            )
+
+            fetch(url + `/booking/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "_id": id
+                })
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error))
+        }
+    })
+
+
+}
 
 function selectOption(location_name, site_price, tent_price) {
     var html = ''
-
     var chkin = sessionStorage.getItem('chkin')
     var chkout = sessionStorage.getItem('chkout')
     var adult = sessionStorage.getItem('adult')
@@ -921,3 +959,4 @@ function selectOption(location_name, site_price, tent_price) {
         }
     });
 }
+

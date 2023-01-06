@@ -19,6 +19,10 @@
 
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+  <link rel="stylesheet" href="treetent.css">
+
+  <link rel="stylesheet" href="/Frontend/responsive/responsive.css">
+
   <script src="../../Backend/index.js"></script>
 
 
@@ -30,91 +34,6 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-    }
-
-    .header-container {
-      height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .textHeader {
-      position: relative;
-      color: white;
-      font-size: 80px;
-      font-weight: 900;
-      text-align: center;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      top: -10%;
-    }
-
-    .scroll-downs {
-      position: absolute;
-      top: 1%;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      width: 34px;
-      height: 55px;
-    }
-
-    .mousey {
-      width: 3px;
-      padding: 10px 15px;
-      height: 35px;
-      border: 2px solid #fff;
-      border-radius: 25px;
-      box-sizing: content-box;
-    }
-
-    .scroller {
-      width: 3px;
-      height: 10px;
-      border-radius: 25%;
-      background-color: #fff;
-      animation-name: scroll;
-      animation-duration: 2.2s;
-      animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
-      animation-iteration-count: infinite;
-    }
-
-    @-webkit-keyframes scroll {
-      0% {
-        opacity: 0;
-      }
-
-      10% {
-
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      100% {
-
-        transform: translateY(15px);
-        opacity: 0;
-      }
-    }
-
-    @keyframes scroll {
-      0% {
-        opacity: 0;
-      }
-
-      10% {
-
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      100% {
-
-        transform: translateY(15px);
-        opacity: 0;
-      }
     }
   </style>
 </head>
@@ -242,14 +161,20 @@
               📍: ภูชี้ดาวลานวิว ตำบล ปอ อำเภอ เวียงแก่น เชียงราย 57310 :📍 </p>
           </p>
           <button class="btn btn-primary w-100" onclick="selectOption('Phu chee dao','250','500')">
-            <h4>Booking</h4>
+            <h4>
+              <i class="fa-solid fa-receipt"></i>&nbsp;
+              Booking
+              <i class="fa-solid fa-receipt"></i>&nbsp;
+            </h4>
           </button>
           <br>
           <br>
           <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <h4>
+              <i class="fa-solid fa-map-location-dot"></i>&nbsp;
               Google Map
+              <i class="fa-solid fa-map-location-dot"></i>&nbsp;
             </h4>
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -278,7 +203,7 @@
               </h4>
               <h4 style="font-size: 15px; text-align: start;">
                 <i class="fa-solid fa-mobile-button" style="font-size: 30px; color: red"></i>&nbsp;
-                096-2199690 
+                096-2199690
               </h4>
               <hr>
               <h1 id="offcanvasRightLabel" style="font-weight: bold; display: flex; align-items: left;">Picture</h1>
