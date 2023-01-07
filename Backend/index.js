@@ -227,63 +227,46 @@ function readData() {
         })
 }
 
-function deleteData() {
-    var deletetb = document.getElementById('deletetb').value
-    console.log(deletetb);
 
-    fetch(url + `/user/${deletetb}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "_id": deletetb
-        })
-    })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
-}
+// function checkAvailable() {
+//     console.log("function called");
+//     var chkin = document.getElementById('checkin').value
+//     var chkout = document.getElementById('checkout').value
+//     var adult = document.getElementById('adult').value
+//     var children = document.getElementById('children').value
+//     var fname = document.getElementById('fname').value
+//     var lname = document.getElementById('lname').value
+//     var email = document.getElementById('email').value
+//     var phone = document.getElementById('phone').value
 
+//     // console.log(chkin);
+//     // var count = 0
+//     // fetch(url + '/location')
+//     //     .then(response => response.json())
+//     //     .then(data => {
+//     //         for (const x of data) {
+//     //             if (x['bookdate'] == "2023-1-6") {
+//     //                 console.log("Test");
+//     //             }
+//     //         }
+//     //     })
+//     fetch(url + '/booking')
+//         .then(response => response.json())
+//         .then(data => {
+//             for (const x of data) {
+//                 console.log(x['check in']);
+//                 // if (x['check in'] == "2023-01-05") {
+//                 //     // Swal.fire({
+//                 //     //     icon: 'error',
+//                 //     //     title: 'Oops...',
+//                 //     //     text: 'Something went wrong!',
+//                 //     // })
 
-function checkAvailable() {
-    console.log("function called");
-    var chkin = document.getElementById('checkin').value
-    var chkout = document.getElementById('checkout').value
-    var adult = document.getElementById('adult').value
-    var children = document.getElementById('children').value
-    var fname = document.getElementById('fname').value
-    var lname = document.getElementById('lname').value
-    var email = document.getElementById('email').value
-    var phone = document.getElementById('phone').value
+//                 // }
+//             }
+//         })
+// }
 
-    // console.log(chkin);
-    // var count = 0
-    // fetch(url + '/location')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         for (const x of data) {
-    //             if (x['bookdate'] == "2023-1-6") {
-    //                 console.log("Test");
-    //             }
-    //         }
-    //     })
-    fetch(url + '/booking')
-        .then(response => response.json())
-        .then(data => {
-            for (const x of data) {
-                console.log(x['check in']);
-                // if (x['check in'] == "2023-01-05") {
-                //     // Swal.fire({
-                //     //     icon: 'error',
-                //     //     title: 'Oops...',
-                //     //     text: 'Something went wrong!',
-                //     // })
-
-                // }
-            }
-        })
-}
 
 function loadBooking() {
     var html = ``
@@ -316,55 +299,60 @@ function loadBooking() {
                                 //     </div>
                                 // </div>`
 
-                                html +=
-                                //     ` <div class="col">
-                                //     <div class="card">
-                                //       <img src="${y["img"]}" class="card-img-top" alt="...">
-                                //       <div class="card-body">
-                                //       <h5 class="card-title">${x['location']}</h5>
-                                //       <p class="card-text">
-                                //                 Check in date : <b>${x['check in']}</b>
-                                //                 </p>
-                                //                 <p class="card-text">
-                                //                 Check out date : <b>${x['check out']}</b>
-                                //                 </p>
-                                //                 <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
-                                //                     <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
-                                //                 <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
-                                //       </div>
-                                //     </div>
-                                //   </div>
-                                //     `
-
-                                    `<br>
-                                    <div class="col-12 col-sm-4">
-                    <div class="card text-center border-0 bg-primary bg-white">
-                        <div class="card border-0">
-                            <img src="${y["img"]}"
-                                class="card-img-top" alt="..." class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">${x['location']}</h5>
-                            <p class="card-text">
-                            Check in date : <b>${x['check in']}</b>
-                            </p>
-                            <p class="card-text">
-                            Check out date : <b>${x['check out']}</b>
-                            </p>
-                            <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
-                                <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                        </div>
-                        </div>
+                                html += `
+                                <div class="col ">
+                <div class="card border-0" >
+                <img src="${y["img"]}"
+                class="card-img-top" alt="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${x['location']}</h5>
+                    <p class="card-text">
+                    Check in date : <b>${x['check in']}</b>
+                    </p>
+                    <p class="card-text">
+                    Check out date : <b>${x['check out']}</b>
+                    </p>
+                   
                     </div>
-                </div>`
+                    <div class="card-footer text-muted">
+                    <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
+                    <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+                                `
 
-               
+
+                                //                     `<br>
+                                //                     <div class="col-12 col-sm-4">
+                                //     <div class="card text-center border-0 bg-primary bg-white">
+                                //         <div class="card border-0">
+                                //             <img src="${y["img"]}"
+                                //                 class="card-img-top" alt="..." class="card-img-top" alt="...">
+                                //         </div>
+                                //         <div class="card-body">
+                                //             <h5 class="card-title">${x['location']}</h5>
+                                //             <p class="card-text">
+                                //             Check in date : <b>${x['check in']}</b>
+                                //             </p>
+                                //             <p class="card-text">
+                                //             Check out date : <b>${x['check out']}</b>
+                                //             </p>
+                                //             <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
+                                //                 <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
+                                //             <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
+                                //         </div>
+                                //         </div>
+                                //         </div>
+                                //     </div>
+                                // </div>`
+
+
                             }
                         }
                     }
-                    
+
                     if (html == ``) {
                         document.getElementById('booking1').innerHTML = `<h1><font color="white">No Booking Data</font></h1>`
                     } else {
@@ -435,6 +423,7 @@ function viewBooking(id) {
                         <input class="form-control" type="text" value="${x['total price']}" disabled>
                         </div>`,
                         focusConfirm: false,
+                        confirmButtonText: 'Close',
                         preConfirm: () => {
                             return [
                             ]
@@ -536,10 +525,10 @@ function deleteBooking(id) {
     console.log(id);
     Swal.fire({
         title: 'Are you sure?',
-        text: "This will cancel your booking. And you won't be able to revert this!",
+        text: "This will delete (cancel) your booking. And you won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
-        cancelButtonText: "Cancel it",
+        cancelButtonText: "No",
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, cancel it'
@@ -563,10 +552,41 @@ function deleteBooking(id) {
                 .then(response => response.json())
                 .then(data => console.log(data))
                 .catch(error => console.log(error))
+            loadTable()
         }
     })
+}
 
-
+function loadTable() {
+    fetch('http://localhost:4596/booking')
+        .then(response => response.json())
+        .then(data => {
+            var trHTML = '';
+            var num = 1;
+            for (let object of data) {
+                trHTML += "<tr>";
+                trHTML += "<td>" + num + "</td>";
+                trHTML += "<td>" + object["location"] + "</td>";
+                trHTML += "<td>" + object["check in"] + "</td>";
+                trHTML += "<td>" + object["check out"] + "</td>";
+                trHTML += "<td>" + object["adult"] + "</td>";
+                trHTML += "<td>" + object["children"] + "</td>";
+                // trHTML += "<td>" + object["firstname"] + "</td>";
+                // trHTML += "<td>" + object["lastname"] + "</td>";
+                trHTML += "<td>" + object["email"] + "</td>";
+                trHTML += "<td>" + object["phone"] + "</td>";
+                trHTML += "<td>" + object["tent"] + "</td>";
+                trHTML += "<td>" + object["tent_amount"] + "</td>";
+                trHTML += "<td>" + object["fishing"] + "</td>";
+                trHTML += "<td>" + object["moo-gata"] + "</td>";
+                trHTML += "<td>" + object["moo-gata-size"] + "</td>";
+                trHTML += "<td>" + object["total price"] + "</td>";
+                trHTML += `<td><button type="submit" class="btn btn-danger" onclick="deleteBooking(${object['id']})"><i class="fa-solid fa-trash"></i></button></td>`;
+                trHTML += "</tr>";
+                num++;
+            }
+            document.getElementById('table').innerHTML = trHTML
+        })
 }
 
 function selectOption(location_name, site_price, tent_price) {
@@ -578,8 +598,7 @@ function selectOption(location_name, site_price, tent_price) {
 
     function totalPrice(location_name, fname, lname, email, phone) {
         var tentsite = parseInt(document.getElementById('tentsite').value)
-
-
+        let timerInterval
 
         // var fname = document.getElementById('fname').value
         // var lname = document.getElementById('lname').value
@@ -631,36 +650,63 @@ function selectOption(location_name, site_price, tent_price) {
                     focusConfirm: false,
                     preConfirm: () => {
                         Swal.fire('Booking Complete!', '', 'success')
-                        return [
-                            fetch(url + '/booking', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    "id": null,
-                                    "location": location_name,
-                                    "check in": chkin,
-                                    "check out": chkout,
-                                    "adult": adult,
-                                    "children": children,
-                                    "firstname": fname,
-                                    "lastname": lname,
-                                    "email": email,
-                                    "phone": phone,
-                                    "tent": 'N/A',
-                                    "tent_amount": 'N/A',
-                                    "fishing": fishing,
-                                    "moo-gata": 'N/A',
-                                    "moo-gata-size": 'N/A',
-                                    "total price": totalPrice
 
-                                })
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: 'Booking Complete!',
+                            html: 'We will redirect you to "My booking" in <b></b> milliseconds.',
+                            timer: 3000,
+                            timerProgressBar: true,
+                            icon: 'success',
+                            confirmButtonText: 'Close',
+                            didOpen: () => {
+                                // Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                return [
+                                    fetch(url + '/booking', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({
+                                            "id": null,
+                                            "location": location_name,
+                                            "check in": chkin,
+                                            "check out": chkout,
+                                            "adult": adult,
+                                            "children": children,
+                                            "firstname": fname,
+                                            "lastname": lname,
+                                            "email": email,
+                                            "phone": phone,
+                                            "tent": 'N/A',
+                                            "tent_amount": 'N/A',
+                                            "fishing": fishing,
+                                            "moo-gata": 'N/A',
+                                            "moo-gata-size": 'N/A',
+                                            "total price": totalPrice
 
-                            }).then(response => response.json())
-                                .then(data => console.log(data))
-                                .catch(error => console.log(error))
-                        ]
+                                        })
+
+                                    }).then(response => response.json())
+                                        .then(data => console.log(data))
+                                        .catch(error => console.log(error))
+                                ],
+                                    window.open("../booking.html")
+                            }
+                        })
                     }
                 })
                 // if (fname == '') {
@@ -705,38 +751,63 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
                     focusConfirm: false,
                     showCancelButton: true,
-                    preConfirm: () => {
-                        Swal.fire('Booking Complete!', '', 'success')
-                        return [
-                            fetch(url + '/booking', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    "id": null,
-                                    "location": location_name,
-                                    "check in": chkin,
-                                    "check out": chkout,
-                                    "adult": adult,
-                                    "children": children,
-                                    "firstname": fname,
-                                    "lastname": lname,
-                                    "email": email,
-                                    "phone": phone,
-                                    "tent": 'N/A',
-                                    "tent_amount": 'N/A',
-                                    "fishing": 'N/A',
-                                    "moo-gata": moo_gata,
-                                    "moo-gata-size": 'N/A',
-                                    "total price": totalPrice
+                    preConfirm: () => { }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: 'Booking Complete!',
+                            html: 'We will redirect you to "My booking" in <b></b> milliseconds.',
+                            timer: 3000,
+                            timerProgressBar: true,
+                            icon: 'success',
+                            confirmButtonText: 'Close',
+                            didOpen: () => {
+                                // Swal.showLoading()
 
-                                })
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                return [
+                                    fetch(url + '/booking', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({
+                                            "id": null,
+                                            "location": location_name,
+                                            "check in": chkin,
+                                            "check out": chkout,
+                                            "adult": adult,
+                                            "children": children,
+                                            "firstname": fname,
+                                            "lastname": lname,
+                                            "email": email,
+                                            "phone": phone,
+                                            "tent": 'N/A',
+                                            "tent_amount": 'N/A',
+                                            "fishing": 'N/A',
+                                            "moo-gata": moo_gata,
+                                            "moo-gata-size": 'N/A',
+                                            "total price": totalPrice
 
-                            }).then(response => response.json())
-                                .then(data => console.log(data))
-                                .catch(error => console.log(error))
-                        ]
+                                        })
+
+                                    }).then(response => response.json())
+                                        .then(data => console.log(data))
+                                        .catch(error => console.log(error))
+                                ],
+                                    window.open("../booking.html")
+                            }
+                        })
                     }
                 })
                 // if (fname == '') {
@@ -797,43 +868,66 @@ function selectOption(location_name, site_price, tent_price) {
                     focusConfirm: false,
                     showCancelButton: true,
                     preConfirm: () => {
-                        Swal.fire('Booking Complete!', '', 'success')
-                        return [
-                            fetch(url + '/booking', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    "id": null,
-                                    "location": location_name,
-                                    "check in": chkin,
-                                    "check out": chkout,
-                                    "adult": adult,
-                                    "children": children,
-                                    "firstname": fname,
-                                    "lastname": lname,
-                                    "email": email,
-                                    "phone": phone,
-                                    "tent": tent,
-                                    "tent_amount": tent_amount,
-                                    "fishing": 'N/A',
-                                    "moo-gata": moo_gata_size,
-                                    "moo-gata-size": size,
-                                    "total price": totalPrice
 
-                                })
+                    }
+
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: 'Booking Complete!',
+                            html: 'We will redirect you to "My booking" in <b></b> milliseconds.',
+                            timer: 3000,
+                            timerProgressBar: true,
+                            icon: 'success',
+                            confirmButtonText: 'Close',
+                            didOpen: () => {
+                                // Swal.showLoading()
+
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                return [
+                                    fetch(url + '/booking', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({
+                                            "id": null,
+                                            "location": location_name,
+                                            "check in": chkin,
+                                            "check out": chkout,
+                                            "adult": adult,
+                                            "children": children,
+                                            "firstname": fname,
+                                            "lastname": lname,
+                                            "email": email,
+                                            "phone": phone,
+                                            "tent": tent,
+                                            "tent_amount": tent_amount,
+                                            "fishing": 'N/A',
+                                            "moo-gata": moo_gata_size,
+                                            "moo-gata-size": size,
+                                            "total price": totalPrice
+                                        })
+                                    }).then(response => response.json())
+                                        .then(data => console.log(data))
+                                        .catch(error => console.log(error)),
+                                    window.open("../booking.html")
+                                ]
 
 
-                            }).then(response => response.json())
-                                .then(data => console.log(data))
-                                .catch(error => console.log(error))
-
-
-                        ]
-
-                    },
-
+                            }
+                        })
+                    }
                 })
                 // if (fname == '') {
                 //     Swal.fire(JSON.stringify(formValues))

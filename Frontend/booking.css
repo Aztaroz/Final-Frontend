@@ -4,15 +4,17 @@
 body {
   font-family: 'Noto Sans Thai', sans-serif;
   background-image: url('https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/header-bg.png?raw=true');
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-div footer {
+/* div footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-}
+} */
 
 
 .history-card {
@@ -50,6 +52,16 @@ div footer {
     text-align: center;
   }
 
+  .textHistory i {
+    display: none;
+  }
+
+  .row .card {
+
+    width: 95%;
+  }
+
+
 
 
 }
@@ -69,25 +81,11 @@ div footer {
     text-align: center;
   }
 
-  .card-text {
-    font-size: 12px;
+  .row .card {
 
-
+    width: 60%;
   }
 
-  .col-12 .card {
-    width: 27vw;
-
-  }
-
-  .card-body button {
-    font-size: 12px;
-  }
-
-  .card img {
-    width: 100%;
-    height: 130px;
-  }
 
   /* .container-footer {
     margin-top: 50%;
@@ -106,24 +104,9 @@ div footer {
   }
 
 
-  .card-text {
-    font-size: 12px;
+  .row .card {
 
-
-  }
-
-  .col-12 .card {
-    width: 27vw;
-
-  }
-
-  .card-body button {
-    font-size: 12px;
-  }
-
-  .card img {
-    width: 100%;
-    height: 130px;
+    width: 60%;
   }
 
 
@@ -131,8 +114,9 @@ div footer {
 
 @media screen and (device-width: 1180px) and (device-height: 820px) {
 
-  .history-card {
-    margin-top: 10%;
+  .row .card {
+
+    width: 80%;
   }
 
 }

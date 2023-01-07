@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PANEL | RESERVE A TENT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Feonts.google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <!-- Feonts.google -->
+
+
+    <link rel="stylesheet" href="treetent.css">
+
+    <link rel="stylesheet" href="/Frontend/responsive/responsive.css">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../../Backend/index.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        /* Feonts.google */
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+
+        /* Style the body */
+        body {
+            background-image: url("https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/admin/bg.png?raw=true");
+
+            height: 100%;
+            margin: 0;
+        }
+
+        .card-title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+
+        .person {
+            border: 10px solid transparent;
+            margin-bottom: 25px;
+            width: 80%;
+            height: 80%;
+
+        }
+
+        .person:hover {
+            border-color: #198754;
+            /* border-color: #f1f1f1; */
+        }
+
+
+        .text1 {
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .text2 {
+            font-size: 45px;
+            font-weight: bolder;
+            font-family: 'Questrial', sans-serif;
+        }
+
+        .text3 {
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: 'Questrial', sans-serif;
+        }
+
+
+
+        /*Iphone 12 pro*/
+        @media screen and (device-width: 390px) and (device-height: 844px) {
+
+            .text1 {
+                font-size: 40px;
+                line-height: 1.6;
+            }
+
+            .text1 i {
+                display: none;
+            }
+
+            .text2 {
+                font-size: 20px;
+            }
+
+            .text3 {
+                font-size: 15px;
+            }
+
+        }
+
+
+        @media screen and (device-width: 844px) and (device-height: 390px) {
+
+            .text1 {
+                font-size: 40px;
+                line-height: 1.6;
+            }
+
+
+            .text2 {
+                font-size: 20px;
+            }
+
+            .text3 {
+                font-size: 15px;
+            }
+
+            .row .card {
+                height: 90%;
+            }
+
+
+
+        }
+
+        /*Iphone 12 pro*/
+
+
+
+        /*Ipad Air*/
+        @media screen and (device-width: 820px) and (device-height: 1180px) {
+            .text1 {
+                font-size: 60px;
+                line-height: 1.6;
+            }
+
+
+            .text2 {
+                font-size: 40px;
+            }
+
+            .text3 {
+                font-size: 35px;
+            }
+        }
+
+
+
+        /*Ipad Air*/
+    </style>
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <h1 class="text1">
+            <i class="fa-solid fa-tents"></i>
+            RESERVE A TENT
+            <i class="fa-solid fa-tents"></i>
+        </h1>
+        <hr style="border: 1px solid black;">
+        <h1 class="text2">
+            WELCOME
+        </h1>
+
+        <h4 class="text3">
+            PLEASE SELECT A LOGIN MODE
+        </h4>
+        <br>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-2 row-cols-xl-2 g-3 " id="row">
+            <div class="col     ">
+                <div class="card border-0 rounded-5">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>USER MODE</strong></h5>
+                        <a href="home.html" target="_blank"><img
+                                src="https://scontent.fhdy4-1.fna.fbcdn.net/v/t1.15752-9/319408729_686179306493304_874710859761316451_n.png?_nc_cat=106&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEhNL87TZuok1tmBTlQNf2EbjdzIF9tbJxuN3MgX21snLYqrFVxB2nR-fR0J9AJFG3BoJrVfEAeZfgl7UUIdRg4&_nc_ohc=GHH17ESvmboAX_wGtBY&_nc_ht=scontent.fhdy4-1.fna&oh=03_AdR5n-osGPum1LrSD6jvyUTJx47i6i4FhAMrlV2gE9ZVWA&oe=63DF6B5A"
+                                class="img-circle person" alt="Random Name" width="255" height="255"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <div class="card border-0 rounded-5">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>ADMIN MODE</strong></h5>
+                        <a href="admin/dataTable.html"><img
+                                src="https://scontent.fhdy4-1.fna.fbcdn.net/v/t1.15752-9/321762669_1356958801781444_388109339687038142_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFF3mr2ppKlo1Jw_hDgqklQryiuKa8tK8OvKK4pry0rw3RIgl20-4CgobIfj2JnDOxi3FcgLbrH_UVZma0kTgjz&_nc_ohc=NJvfllbpXO8AX9rP64-&_nc_ht=scontent.fhdy4-1.fna&oh=03_AdSPJ7eVDb-M4Uu8hOEV-te-lzsDkc6tQ7PR8TDH3-B_iw&oe=63DF78A9"
+                                class="img-circle person" alt="Random Name" width="255" height="255"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>

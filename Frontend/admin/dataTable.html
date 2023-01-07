@@ -26,51 +26,21 @@
     <script src="../../Backend/index.js"></script>
 
     <script>
-        function loadTable() {
-            fetch('http://localhost:4596/booking')
-                .then(response => response.json())
-                .then(data => {
-                    var trHTML = '';
-                    var num = 1;
-                    for (let object of data) {
-                        trHTML += "<tr>";
-                        trHTML += "<td>" + num + "</td>";
-                        trHTML += "<td>" + object["location"] + "</td>";
-                        trHTML += "<td>" + object["check in"] + "</td>";
-                        trHTML += "<td>" + object["check out"] + "</td>";
-                        trHTML += "<td>" + object["adult"] + "</td>";
-                        trHTML += "<td>" + object["children"] + "</td>";
-                        // trHTML += "<td>" + object["firstname"] + "</td>";
-                        // trHTML += "<td>" + object["lastname"] + "</td>";
-                        trHTML += "<td>" + object["email"] + "</td>";
-                        trHTML += "<td>" + object["phone"] + "</td>";
-                        trHTML += "<td>" + object["tent"] + "</td>";
-                        trHTML += "<td>" + object["tent_amount"] + "</td>";
-                        trHTML += "<td>" + object["fishing"] + "</td>";
-                        trHTML += "<td>" + object["moo-gata"] + "</td>";
-                        trHTML += "<td>" + object["moo-gata-size"] + "</td>";
-                        trHTML += "<td>" + object["total price"] + "</td>";
-                        trHTML += `<td><button class="btn btn-danger" onclick="deleteData(${object['id']})"><i class="fa-solid fa-trash"></i></button></td>`;
-                        trHTML += "</tr>";
-                        num++;
-                    }
-                    document.getElementById('table').innerHTML = trHTML
-                })
-        }
+        
     </script>
 </head>
 
 <body onload="loadTable()">
     <nav class="navbar bg-dark">
-        <div class="container-fluid " >
-            <a class="navbar-brand" style="color: white;" href="index.html">Home</a>
+        <div class="container-fluid ">
+            <a class="navbar-brand" style="color: white;" href="../index.html">Home</a>
         </div>
     </nav>
 
     <div class="table-responsive">
         <table class="table table-condensed  table-hover text-center table-bordered border-dark border-opacity-25">
             <thead style="background-color: #198754; color: white;">
-                <tr >
+                <tr>
                     <th scope="col">#</th>
                     <th scope="col">Location</th>
                     <th scope="col">Check in</th>

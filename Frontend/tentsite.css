@@ -4,6 +4,7 @@ html {
 	scroll-behavior: smooth;
 }
 
+
 body {
 	font-family: 'Noto Sans Thai', sans-serif;
 	background-image: url('https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/header-bg.png?raw=true');
@@ -106,3 +107,91 @@ body {
 		opacity: 0;
 	}
 }
+
+
+.row .card {
+	height: 400px;
+	width: 90%;
+}
+
+/*Iphone 12 pro*/
+@media screen and (device-width: 390px) and (device-height: 844px) {
+	.textHeader {
+
+		font-size: 50px;
+		line-height: 1.6;
+	}
+
+	.textHeader i {
+		display: none;
+	}
+
+
+}
+
+
+@media screen and (device-width: 844px) and (device-height: 390px) {
+
+	.textHeader {
+
+		font-size: 50px;
+
+	}
+
+	.scroll-downs {
+
+		top: 30%;
+
+	}
+
+	.row col .card {
+
+		width: 60%;
+	}
+
+
+
+}
+
+/*Iphone 12 pro*/
+
+
+
+/*Ipad Air*/
+@media screen and (device-width: 820px) and (device-height: 1180px) {
+
+	.textHeader {
+
+		font-size: 100px;
+		line-height: 1.6;
+	}
+
+	.textHeader i {
+		display: none;
+	}
+
+	.row .card {
+
+		width: 60%;
+	}
+
+
+}
+
+@media screen and (device-width: 1180px) and (device-height: 820px) {
+
+	.textHeader {
+
+		font-size: 70px;
+
+	}
+
+	.row .card {
+
+		width: 80%;
+	}
+
+
+}
+
+/*Ipad Air*/
