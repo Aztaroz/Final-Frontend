@@ -576,10 +576,7 @@ function selectOption(location_name, site_price, tent_price) {
                     // `<input id="swal-input5" class="swal2-input" value="${totalPrice}"disable>`,
                     showCancelButton: true,
                     focusConfirm: false,
-                    preConfirm: () => {
-                        Swal.fire('Booking Complete!', '', 'success')
-
-                    }
+                    preConfirm: () => { }
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
@@ -633,6 +630,37 @@ function selectOption(location_name, site_price, tent_price) {
                                         .catch(error => console.log(error))
                                 ],
                                     window.open("../booking.html")
+                            } else {
+                                return [
+                                    fetch(url + '/booking', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({
+                                            "id": null,
+                                            "location": location_name,
+                                            "check in": chkin,
+                                            "check out": chkout,
+                                            "adult": adult,
+                                            "children": children,
+                                            "firstname": fname,
+                                            "lastname": lname,
+                                            "email": email,
+                                            "phone": phone,
+                                            "tent": 'N/A',
+                                            "tent_amount": 'N/A',
+                                            "fishing": fishing,
+                                            "moo-gata": 'N/A',
+                                            "moo-gata-size": 'N/A',
+                                            "total price": totalPrice
+
+                                        })
+
+                                    }).then(response => response.json())
+                                        .then(data => console.log(data))
+                                        .catch(error => console.log(error))
+                                ]
                             }
                         })
                     }
@@ -734,6 +762,37 @@ function selectOption(location_name, site_price, tent_price) {
                                         .catch(error => console.log(error))
                                 ],
                                     window.open("../booking.html")
+                            } else {
+                                return [
+                                    fetch(url + '/booking', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({
+                                            "id": null,
+                                            "location": location_name,
+                                            "check in": chkin,
+                                            "check out": chkout,
+                                            "adult": adult,
+                                            "children": children,
+                                            "firstname": fname,
+                                            "lastname": lname,
+                                            "email": email,
+                                            "phone": phone,
+                                            "tent": 'N/A',
+                                            "tent_amount": 'N/A',
+                                            "fishing": 'N/A',
+                                            "moo-gata": moo_gata,
+                                            "moo-gata-size": 'N/A',
+                                            "total price": totalPrice
+
+                                        })
+
+                                    }).then(response => response.json())
+                                        .then(data => console.log(data))
+                                        .catch(error => console.log(error))
+                                ]
                             }
                         })
                     }
@@ -796,10 +855,7 @@ function selectOption(location_name, site_price, tent_price) {
                     focusConfirm: false,
                     showCancelButton: true,
                     preConfirm: () => {
-
-                    }
-
-                }).then((result) => {
+                    }}).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
                             title: 'Booking Complete!',
@@ -851,8 +907,35 @@ function selectOption(location_name, site_price, tent_price) {
                                         .catch(error => console.log(error)),
                                     window.open("../booking.html")
                                 ]
-
-
+                            }else{
+                                return [
+                                    fetch(url + '/booking', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({
+                                            "id": null,
+                                            "location": location_name,
+                                            "check in": chkin,
+                                            "check out": chkout,
+                                            "adult": adult,
+                                            "children": children,
+                                            "firstname": fname,
+                                            "lastname": lname,
+                                            "email": email,
+                                            "phone": phone,
+                                            "tent": tent,
+                                            "tent_amount": tent_amount,
+                                            "fishing": 'N/A',
+                                            "moo-gata": moo_gata_size,
+                                            "moo-gata-size": size,
+                                            "total price": totalPrice
+                                        })
+                                    }).then(response => response.json())
+                                        .then(data => console.log(data))
+                                        .catch(error => console.log(error))
+                                ]
                             }
                         })
                     }
