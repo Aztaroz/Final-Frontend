@@ -1,25 +1,6 @@
 {
   "checkAvailable": {},
-  "booking": [
-    {
-      "id": 1,
-      "location": "Camping is life",
-      "check in": "2023-01-30",
-      "check out": "2023-01-31",
-      "adult": "1",
-      "children": "1",
-      "firstname": "asdasd",
-      "lastname": "cddfv",
-      "email": "flight1459@gmail.com",
-      "phone": "0458956321",
-      "tent": "N/A",
-      "tent_amount": "N/A",
-      "fishing": 200,
-      "moo-gata": "N/A",
-      "moo-gata-size": "N/A",
-      "total price": 400
-    }
-  ],
+  "booking": [],
   "location": [
     {
       "id": 1,
