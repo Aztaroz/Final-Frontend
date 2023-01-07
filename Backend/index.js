@@ -1,82 +1,4 @@
-
-// // Get the modal
-// var modal = document.getElementById('myModal');
-
-// // Get the image and insert it inside the modal - use its "alt" text as a caption
-// var img1 = document.getElementById('myImg1');
-// var img2 = document.getElementById('myImg2');
-// var img3 = document.getElementById('myImg3');
-// var img4 = document.getElementById('myImg4');
-// var img5 = document.getElementById('myImg5');
-// var modalImg = document.getElementById("img01");
-// var captionText = document.getElementById("caption");
-
-// img1.onclick = function(){
-//   modal.style.display = "block";
-//   modalImg.src = this.src;
-//   captionText.innerHTML = this.alt;
-// }
-// img2.onclick = function(){
-//   modal.style.display = "block";
-//   modalImg.src = this.src;
-//   captionText.innerHTML = this.alt;
-// }
-// img3.onclick = function(){
-//   modal.style.display = "block";
-//   modalImg.src = this.src;
-//   captionText.innerHTML = this.alt;
-// }
-// img4.onclick = function(){
-//   modal.style.display = "block";
-//   modalImg.src = this.src;
-//   captionText.innerHTML = this.alt;
-// }
-// img5.onclick = function(){
-//   modal.style.display = "block";
-//   modalImg.src = this.src;
-//   captionText.innerHTML = this.alt;
-// }
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() { 
-//   modal.style.display = "none";
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var url = 'http://localhost:4596'
+var url = 'http://localhost:3000'
 
 // window.addEventListener("beforeunload", function(event) {
 //     event.returnValue = "Write something clever here..";
@@ -552,15 +474,17 @@ function deleteBooking(id) {
                 .then(response => response.json())
                 .then(data => console.log(data))
                 .catch(error => console.log(error))
-            loadTable()
+            // loadTable()
         }
     })
 }
 
 function loadTable() {
-    fetch('http://localhost:4596/booking')
+    // fetch('http://localhost:3000/booking')
+    fetch(url + '/booking')
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             var trHTML = '';
             var num = 1;
             for (let object of data) {
@@ -585,7 +509,11 @@ function loadTable() {
                 trHTML += "</tr>";
                 num++;
             }
+            // if (trHTML == '') {
+            //     document.getElementById('table').innerHTML = `<h1><font color="white">No Booking Data</font></h1>`
+            // } else {
             document.getElementById('table').innerHTML = trHTML
+            // }
         })
 }
 
