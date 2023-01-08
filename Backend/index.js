@@ -1,37 +1,6 @@
 var url = 'http://localhost:3000'
 
-// window.addEventListener("beforeunload", function(event) {
-//     event.returnValue = "Write something clever here..";
-//   });
-
-
-// function Date() {
-//     const today = new Date().toISOString().split("T")[0];
-//     const chkin = document.getElementById('checkin').value
-//     if (chkin < today) {
-//         Swal.fire({
-//             icon: 'error',
-//             title: 'Oops...',
-//             text: 'Wrong Check-in Date!',
-//         })
-//         document.getElementById('checkin').value = '';
-//     }
-// }
-
-// function checkoutDate() {
-//     const today = new Date().toISOString().split("T")[0];
-//     const chkout = document.getElementById('checkout').value
-//     if (chkout < today) {
-//         Swal.fire({
-//             icon: 'error',
-//             title: 'Oops...',
-//             text: 'Wrong Check-out Date!',
-//         })
-//         document.getElementById('checkout').value = '';
-//     }
-// }
 function checkinDate() {
-
     const today = new Date().toISOString().split("T")[0];
     const chkin = document.getElementById('checkin').value
     if (chkin < today) {
@@ -58,21 +27,6 @@ function checkoutDate() {
     }
 }
 
-// function createData(){
-//     console.log("function createData() is called");
-//     var name = document.getElementById('name').value
-//     var sname = document.getElementById('lname').value
-
-//     var xhttp = new XMLHttpRequest()
-
-//     xhttp.open('POST',url+'/user')
-//     xhttp.setRequestHeader('Content-Type', 
-//     'application/json')
-
-//     xhttp.send(JSON.stringify({
-//         id:'',"Firstname":name,"Lastname": sname
-//     }))
-// }
 
 function createData() {
     console.log("function createData() is called");
@@ -81,18 +35,6 @@ function createData() {
     var chkout = document.getElementById('checkout').value
     var adult = document.getElementById('adult').value
     var children = document.getElementById('children').value
-    // var fname = document.getElementById('fname').value
-    // var lname = document.getElementById('lname').value
-    // var email = document.getElementById('email').value
-    // var phone = document.getElementById('phone').value
-
-    // check if the form has a null value
-    // if (chkin == '' || chkout == '' || adult == '' || children == '' || fname == '' || lname == '' || email == '' || phone == '') {
-    //     Swal.fire({
-    //         icon: 'error',
-    //         title: 'Oops...',
-    //         text: 'Please Fill Out All Form',
-    //     })
     if (chkin == '' || chkout == '' || adult == '' || children == '') {
         Swal.fire({
             icon: 'error',
@@ -108,23 +50,6 @@ function createData() {
     }
 
 }
-
-
-// old
-// function readData() {
-//     console.log("function createData() is called");
-//     var html = ''
-
-//     fetch(url + '/user')
-//         .then(response => response.json())
-//         .then(data => {
-//             for (const x of data) {
-//                 console.log(x.id);
-//                 html += `<h1>${x.user} ${x.sname}</h1><br>`
-//             }
-//             document.getElementById("showdata").innerHTML = html
-//         })
-// }
 
 function readData() {
     console.log("function createData() is called");
@@ -150,46 +75,6 @@ function readData() {
 }
 
 
-// function checkAvailable() {
-//     console.log("function called");
-//     var chkin = document.getElementById('checkin').value
-//     var chkout = document.getElementById('checkout').value
-//     var adult = document.getElementById('adult').value
-//     var children = document.getElementById('children').value
-//     var fname = document.getElementById('fname').value
-//     var lname = document.getElementById('lname').value
-//     var email = document.getElementById('email').value
-//     var phone = document.getElementById('phone').value
-
-//     // console.log(chkin);
-//     // var count = 0
-//     // fetch(url + '/location')
-//     //     .then(response => response.json())
-//     //     .then(data => {
-//     //         for (const x of data) {
-//     //             if (x['bookdate'] == "2023-1-6") {
-//     //                 console.log("Test");
-//     //             }
-//     //         }
-//     //     })
-//     fetch(url + '/booking')
-//         .then(response => response.json())
-//         .then(data => {
-//             for (const x of data) {
-//                 console.log(x['check in']);
-//                 // if (x['check in'] == "2023-01-05") {
-//                 //     // Swal.fire({
-//                 //     //     icon: 'error',
-//                 //     //     title: 'Oops...',
-//                 //     //     text: 'Something went wrong!',
-//                 //     // })
-
-//                 // }
-//             }
-//         })
-// }
-
-
 function loadBooking() {
     var html = ``
     fetch(url + "/location")
@@ -201,26 +86,6 @@ function loadBooking() {
                     for (const x of bookingData) {
                         for (const y of locationData) {
                             if (y['name'] == x['location']) {
-
-                                //     html += `<div class="card col-lg-6 ">
-                                //     <div class="row">
-                                //         <div class="col-md-4">
-                                //     <img src=${y["img"]} class="img-fluid rounded-start">
-                                //     </div>
-                                //     <div class="col-md-8" >
-                                //         <div class="card-body">
-                                //             <h5 class="card-title">${x['location']}</h5>
-                                //             <p class="card-text">Check in date : ${x['check in']}</p>
-                                //             <p class="card-text">Check out date : ${x['check out']}</p>
-                                //             <button class="btn btn-primary">View Booking</button>
-                                //             <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                                //             <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                //     </div>
-                                //     </div>
-
-                                //     </div>
-                                // </div>`
-
                                 html += `
                                 <div class="col ">
                 <div class="card border-0" >
@@ -242,35 +107,7 @@ function loadBooking() {
                 <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
-            </div>
-                                `
-
-
-                                //                     `<br>
-                                //                     <div class="col-12 col-sm-4">
-                                //     <div class="card text-center border-0 bg-primary bg-white">
-                                //         <div class="card border-0">
-                                //             <img src="${y["img"]}"
-                                //                 class="card-img-top" alt="..." class="card-img-top" alt="...">
-                                //         </div>
-                                //         <div class="card-body">
-                                //             <h5 class="card-title">${x['location']}</h5>
-                                //             <p class="card-text">
-                                //             Check in date : <b>${x['check in']}</b>
-                                //             </p>
-                                //             <p class="card-text">
-                                //             Check out date : <b>${x['check out']}</b>
-                                //             </p>
-                                //             <button onclick="viewBooking(${x['id']})" class="btn btn-primary">View Booking</button>
-                                //                 <button class="btn btn-warning" onclick="editBooking(${x['id']})"><i class="fa-solid fa-pen-to-square"></i></button>
-                                //             <button class="btn btn-danger" onclick="deleteBooking(${x['id']})"><i class="fa-solid fa-trash"></i></button>
-                                //         </div>
-                                //         </div>
-                                //         </div>
-                                //     </div>
-                                // </div>`
-
-
+            </div>`
                             }
                         }
                     }
@@ -281,27 +118,6 @@ function loadBooking() {
                         document.getElementById('booking1').innerHTML = html
                     }
 
-
-                    // for (const x of bookingData) {
-                    //     for (const y of locationData) {
-                    //         if (y['name'] == x['location']) {
-                    //             html += `<div class="card w-25">
-                    //             <div class="bg-image" data-mdb-ripple-color="light">
-                    //                 <img src="${y["img"]}" class="img-fluid"/>
-                    //             </div>
-                    //             <div class="card-body">
-                    //                 <h5 class="card-title">${x['location']}</h5>
-                    //                 <p class="card-text">Check in date : ${x['check in']}</p>
-                    //                 <p class="card-text">Check out date : ${x['check out']}</p>
-
-                    //             </div>
-                    //             </div>`
-                    //         }
-                    //     }
-                    // }
-
-                    // console.log(html);
-                    //  
 
                 })
 
@@ -475,15 +291,13 @@ function deleteBooking(id) {
                 .then(response => response.json())
                 .then(data => console.log(data))
                 .catch(error => console.log(error))
-            // loadTable()
             location.reload();
-            
+
         }
     })
 }
 
 function loadTable() {
-    // fetch('http://localhost:3000/booking')
     fetch(url + '/booking')
         .then(response => response.json())
         .then(data => {
@@ -512,11 +326,7 @@ function loadTable() {
                 trHTML += "</tr>";
                 num++;
             }
-            // if (trHTML == '') {
-            //     document.getElementById('table').innerHTML = `<h1><font color="white">No Booking Data</font></h1>`
-            // } else {
             document.getElementById('table').innerHTML = trHTML
-            // }
         })
 }
 
@@ -530,12 +340,6 @@ function selectOption(location_name, site_price, tent_price) {
     function totalPrice(location_name, fname, lname, email, phone) {
         var tentsite = parseInt(document.getElementById('tentsite').value)
         let timerInterval
-
-        // var fname = document.getElementById('fname').value
-        // var lname = document.getElementById('lname').value
-        // var email = document.getElementById('email').value
-        // var phone = document.getElementById('phone').value
-
         site_price = parseInt(site_price)
         tent_price = parseInt(tent_price)
 
@@ -668,10 +472,6 @@ function selectOption(location_name, site_price, tent_price) {
                         })
                     }
                 })
-                // if (fname == '') {
-                //     Swal.fire(JSON.stringify(formValues))
-                //     console.log("nullllllll");
-                // }
                 break;
             case 'Pha hee':
                 var moo_gata = parseInt(document.getElementById('moo-gata').value)
@@ -732,7 +532,6 @@ function selectOption(location_name, site_price, tent_price) {
                                 clearInterval(timerInterval)
                             }
                         }).then((result) => {
-                            /* Read more about handling dismissals below */
                             if (result.dismiss === Swal.DismissReason.timer) {
                                 return [
                                     fetch(url + '/booking', {
@@ -800,10 +599,6 @@ function selectOption(location_name, site_price, tent_price) {
                         })
                     }
                 })
-                // if (fname == '') {
-                //     Swal.fire(JSON.stringify(formValues))
-                //     console.log("nullllllll");
-                // }
                 break;
             case 'Phu chee dao':
                 var tent = parseInt(document.getElementById('tent').value)
@@ -880,7 +675,6 @@ function selectOption(location_name, site_price, tent_price) {
                                 clearInterval(timerInterval)
                             }
                         }).then((result) => {
-                            /* Read more about handling dismissals below */
                             if (result.dismiss === Swal.DismissReason.timer) {
                                 return [
                                     fetch(url + '/booking', {
@@ -944,10 +738,6 @@ function selectOption(location_name, site_price, tent_price) {
                         })
                     }
                 })
-                // if (fname == '') {
-                //     Swal.fire(JSON.stringify(formValues))
-                //     console.log("nullllllll");
-                // }
                 break;
             default:
                 break;
