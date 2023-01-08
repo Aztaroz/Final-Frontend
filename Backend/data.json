@@ -2,21 +2,21 @@
   "booking": [
     {
       "id": 1,
-      "location": "Phu chee dao",
-      "check in": "2023-01-12",
-      "check out": "2023-01-13",
-      "adult": "50",
+      "location": "Camping is life",
+      "check in": "2023-01-11",
+      "check out": "2023-01-14",
+      "adult": "1",
       "children": "0",
-      "firstname": "qweqeq",
-      "lastname": "ewrww",
-      "email": "qdwfkspkf@mail",
-      "phone": "0987654321",
-      "tent": 500,
-      "tent_amount": 500,
-      "fishing": "N/A",
-      "moo-gata": 500,
-      "moo-gata-size": "Large",
-      "total price": 250750
+      "firstname": "qwert",
+      "lastname": "yuio",
+      "email": "bakemeb936@corylan.com",
+      "phone": "0661140738",
+      "tent": "N/A",
+      "tent_amount": "N/A",
+      "fishing": 200,
+      "moo-gata": "N/A",
+      "moo-gata-size": "N/A",
+      "total price": 400
     }
   ],
   "location": [
