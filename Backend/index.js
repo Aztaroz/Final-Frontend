@@ -433,7 +433,8 @@ function editBooking(id) {
                             .catch(error => console.log(error))
 
                     ],
-                        Swal.fire('Saved!', '', 'success')
+                        Swal.fire('Saved!', '', 'success'),
+                        location.reload();
                 }
             })
 
@@ -475,6 +476,8 @@ function deleteBooking(id) {
                 .then(data => console.log(data))
                 .catch(error => console.log(error))
             // loadTable()
+            location.reload();
+            
         }
     })
 }
@@ -855,7 +858,8 @@ function selectOption(location_name, site_price, tent_price) {
                     focusConfirm: false,
                     showCancelButton: true,
                     preConfirm: () => {
-                    }}).then((result) => {
+                    }
+                }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
                             title: 'Booking Complete!',
@@ -907,7 +911,7 @@ function selectOption(location_name, site_price, tent_price) {
                                         .catch(error => console.log(error)),
                                     window.open("booking.html")
                                 ]
-                            }else{
+                            } else {
                                 return [
                                     fetch(url + '/booking', {
                                         method: 'POST',

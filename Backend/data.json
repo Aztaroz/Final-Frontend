@@ -1,29 +1,29 @@
 {
   "booking": [
     {
-      "id": 7,
-      "location": "Camping is life",
-      "check in": "2023-01-11",
-      "check out": "2023-01-12",
-      "adult": "1",
+      "id": 1,
+      "location": "Phu chee dao",
+      "check in": "2023-01-12",
+      "check out": "2023-01-13",
+      "adult": "50",
       "children": "0",
-      "firstname": "a",
-      "lastname": "a",
-      "email": "kasidit.bn@mail.cwu.ac.th",
-      "phone": "0846695862",
-      "tent": "N/A",
-      "tent_amount": "N/A",
-      "fishing": 200,
-      "moo-gata": "N/A",
-      "moo-gata-size": "N/A",
-      "total price": 400
+      "firstname": "qweqeq",
+      "lastname": "ewrww",
+      "email": "qdwfkspkf@mail",
+      "phone": "0987654321",
+      "tent": 500,
+      "tent_amount": 500,
+      "fishing": "N/A",
+      "moo-gata": 500,
+      "moo-gata-size": "Large",
+      "total price": 250750
     }
   ],
   "location": [
     {
       "id": 1,
       "name": "Camping is life",
-      "img": "https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/314120393_564962512276044_307674118878567834_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGljxcPszkRHwmxxY2NFo0kKVD-24RqEsQpUP7bhGoSxBPAVTWdM5aT4HO_vRld3v3FaiA2wpVgyamuStU3S0N_&_nc_ohc=32xjuF3AEaMAX_dwr-W&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCU1ZaToHIqoTZsC8JC1G_cTB_zoG7rzysSbyA_M1TYHg&oe=63B9BA8A"
+      "img": "https://github.com/Aztaroz/Final-Frontend/blob/main/Frontend/user/img/Camping-is-life2.png?raw=true"
     },
     {
       "id": 2,
