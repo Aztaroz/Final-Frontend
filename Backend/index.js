@@ -629,7 +629,7 @@ function selectOption(location_name, site_price, tent_price) {
                                         .then(data => console.log(data))
                                         .catch(error => console.log(error))
                                 ],
-                                    window.open("../booking.html")
+                                    window.open("booking.html")
                             } else {
                                 return [
                                     fetch(url + '/booking', {
@@ -761,7 +761,7 @@ function selectOption(location_name, site_price, tent_price) {
                                         .then(data => console.log(data))
                                         .catch(error => console.log(error))
                                 ],
-                                    window.open("../booking.html")
+                                    window.open("booking.html")
                             } else {
                                 return [
                                     fetch(url + '/booking', {
@@ -905,7 +905,7 @@ function selectOption(location_name, site_price, tent_price) {
                                     }).then(response => response.json())
                                         .then(data => console.log(data))
                                         .catch(error => console.log(error)),
-                                    window.open("../booking.html")
+                                    window.open("booking.html")
                                 ]
                             }else{
                                 return [
