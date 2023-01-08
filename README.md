@@ -53,6 +53,9 @@
 }
 ```
 <table style="border: red solid 1px;">
+    <thead>
+        <h2><b>booking :</b></h2>
+    </thead>
     <tr>
         <th>Attribute Name</th>
         <th>Description</th>
@@ -62,7 +65,7 @@
     <tr>
         <td>id</td>
         <td>ID ของผู้ใช้</td>
-        <td>String</td>
+        <td>Int</td>
         <td>1</td>
     </tr>
     <tr>
@@ -123,21 +126,70 @@
         <td>tent</td>
         <td>ราคาเต็นท์ที่ผู้จองเลือก(หากมีให้เช่า)</td>
         <td>String</td>
+        <td>500</td>
+    </tr>
+    <tr>
+        <td>tent_amount</td>
+        <td>จำนวนเต็นท์ที่ผู้จองต้องการ (หากมี)</td>
+        <td>Int</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>fishing</td>
+        <td>ค่าใช้จ่ายสำหรับการตกปลา (หากมี)</td>
+        <td>Int</td>
+        <td>200</td>
+    </tr>
+    <tr>
+        <td>moo-gata</td>
+        <td>ราคาหมูกระทะ</td>
+        <td>Int</td>
+        <td>500</td>
+    </tr>
+    <tr>
+        <td>moo-gata-size</td>
+        <td>Size ของหมูกระทะ</td>
+        <td>String</td>
+        <td>Large</td>
+    </tr>
+    <tr>
+        <td>total price</td>
+        <td>ราคารวมทั้งหมด</td>
+        <td>Int</td>
+        <td>1250</td>
     </tr>
 </table>
 
-<li>phone (เบอร์โทรศัพท์ของผู้จอง)</li>
-<li>tent (ราคาเต็นท์ที่ผู้จองเลือก(หากมีให้เช่า))</li>
-<li>tent_amount (จำนวนเต็นท์ที่ผู้จองต้องการ (หากมี))</li>
-<li>fishing (ค่าใช้จ่ายสำหรับการตกปลา (หากมี))</li>
-<li>moo-gata (ราคาหมูกระทะ)</li>
-<li>moo-gata-size (ราคาหมูกระทะ)</li>
-<li>total price (ราคารวมทั้งหมด)</li>
-</ul>
-</li>
-<li>location (ข้อมูลสถานที่ที่มีลานกางเต็นท์)</li>
-</ul>
-<br>
+
+<table style="border: red solid 1px;">
+    <thead>
+        <h2><b>location :</b></h2>
+    </thead>
+    <tr>
+        <th>Attribute Name</th>
+        <th>Description</th>
+        <th>Data Type</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>id ของสถานที่ที่มีลานกางเต็นท์ให้บริการ</td>
+        <td>Int</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>ชื่อสถานที่ที่มีลานกางเต็นท์ให้บริการ</td>
+        <td>String</td>
+        <td>Camping is life</td>
+    </tr>
+    <tr>
+        <td>img</td>
+        <td>รูป Thumbnail ของสถานที่</td>
+        <td>String</td>
+        <td>https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/314120393_564962512276044_307674118878567834_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGljxcPszkRHwmxxY2NFo0kKVD-24RqEsQpUP7bhGoSxBPAVTWdM5aT4HO_vRld3v3FaiA2wpVgyamuStU3S0N_&_nc_ohc=32xjuF3AEaMAX_dwr-W&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfCU1ZaToHIqoTZsC8JC1G_cTB_zoG7rzysSbyA_M1TYHg&oe=63B9BA8A</td>
+    </tr>
+</table>
 
 
 
@@ -162,9 +214,11 @@
 
 
 # ลิงค์คลิป Youetube :
-<img src="https://youtu.be/BZJGVPRGCu8"
-    height="35" alt="youtube logo" />
-<br><br>
+<div align="left">
+    <a href="https://youtu.be/BZJGVPRGCu8"> <img
+            src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge"
+            height="35" alt="youtube logo" /></a>
+</div>
 
 # สมาชิคในกลุ่ม : 🤷‍♀️🤷‍♂️
 - 64100738 นายกษิดิศ บุญชัย
@@ -185,5 +239,5 @@
 
 # หลักสูตรเทคโนโลยีสารสนเทศและนวัตกรรมดิจิทัล สำนักวิชาสารสนเทศศาสตร์ 🏫
 <div>
-<img height="300" width="300" src="https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/279560270_5821053641244444_1641496247686643675_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF0EY1X0Qdhl07UJiFQsaVZWylXctbtv-pbKVdy1u2_6tf9k1Ytpc8jIphmM3ZHSVw5BcDktrmF-SyZmjBluAYm&_nc_ohc=cuLkhutHAIsAX-6WoFW&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfChkK43-YQ1dkymkyoYMlRPgTSO4xj8-EzDtsU5lP-ipw&oe=63BDC9E6" /> 
-
+    <img height="300" width="300"
+        src="https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/279560270_5821053641244444_1641496247686643675_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF0EY1X0Qdhl07UJiFQsaVZWylXctbtv-pbKVdy1u2_6tf9k1Ytpc8jIphmM3ZHSVw5BcDktrmF-SyZmjBluAYm&_nc_ohc=cuLkhutHAIsAX-6WoFW&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfChkK43-YQ1dkymkyoYMlRPgTSO4xj8-EzDtsU5lP-ipw&oe=63BDC9E6" />
