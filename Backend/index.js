@@ -1,6 +1,6 @@
 var url = 'http://localhost:3000'
 
-function checkinDate() {
+function checkinDate() {    //ตรวจสอบวันที่ Check in
     const today = new Date().toISOString().split("T")[0];
     const chkin = document.getElementById('checkin').value
     if (chkin < today) {
@@ -13,7 +13,7 @@ function checkinDate() {
     }
 }
 
-function checkoutDate() {
+function checkoutDate() {   //ตรวจสอบวันที่ Check out
     const today = new Date().toISOString().split("T")[0];
     const chkin = document.getElementById('checkin').value
     const chkout = document.getElementById('checkout').value
@@ -28,7 +28,7 @@ function checkoutDate() {
 }
 
 
-function createData() {
+function createData() { //บันทึกข้อมูลลงใน Session
     console.log("function createData() is called");
 
     var chkin = document.getElementById('checkin').value
@@ -41,7 +41,7 @@ function createData() {
             title: 'Oops...',
             text: 'Please Fill Out All Form',
         })
-    } else {
+    } else { //เก็บข้อมูลใน Session
         sessionStorage.setItem('chkin', chkin)
         sessionStorage.setItem('chkout', chkout)
         sessionStorage.setItem('adult', adult)
