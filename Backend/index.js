@@ -27,31 +27,30 @@ function checkoutDate() {   //ตรวจสอบวันที่ Check out
     }
 }
 
-
+// Note : จริง ๆ น่าจะเปลี่ยนชื่อเป็นอย่างอื่นที่ไม่ใช่ createData แต่นึกชื่อไม่ออกเลยใช้อันนี้ล่ะ ;-;
 function createData() { //บันทึกข้อมูลลงใน Session
     console.log("function createData() is called");
-
     var chkin = document.getElementById('checkin').value
     var chkout = document.getElementById('checkout').value
     var adult = document.getElementById('adult').value
     var children = document.getElementById('children').value
-    if (chkin == '' || chkout == '' || adult == '' || children == '') {
+    if (chkin == '' || chkout == '' || adult == '' || children == '') { //ตรวจสอบไม่ให้ Field ที่กรอกข้อมูลมีค่า Null
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Please Fill Out All Form',
         })
-    } else { //เก็บข้อมูลใน Session
+    } else { //เก็บข้อมูลที่ผู้ใช้กรอกใน Session (ข้อมูลจะอยู่ตลอดไปจนกว่าผู้ใช้จะปิดแท็ปหรือปิด Browser)
         sessionStorage.setItem('chkin', chkin)
         sessionStorage.setItem('chkout', chkout)
         sessionStorage.setItem('adult', adult)
         sessionStorage.setItem('children', children)
-        window.open("tentsite.html");
+        window.open("tentsite.html");   //เปิดแท็ปใหม่ตาม Path ที่กำหนด (สาเหตุที่ทำแบบนี้เพราะว่าถ้าใช้ Attribute target ="_blank" ข้อมูล 4 บรรทัดข้างบนมันจะไม่ถูกบันทึกลงใน Session เหมือนว่ามันเปิดแท็ปใหม่ก็จริงแต่ว่ามันเป็นคนละ Session กัน แล้วทีนี้พอจะเรียกข้อมูลมาใช้มันก็จะเป็น Undefined)
     }
 
 }
 
-function readData() {
+function readData() { // อ่านข้อมูลจาก JSON แล้วนำข้อมูลนั้นมาสร้างเป็น Card โดยใช้ Bootstrap
     console.log("function createData() is called");
     var html = '<div class="row">'
 
@@ -60,7 +59,8 @@ function readData() {
         .then(data => {
             for (const x of data) {
                 console.log(x.id);
-                html += `<div class="card" style="width: 18rem;">
+                // + สะสมค่าที่เป็นคำสั่ง HTML เรื่อย ๆ
+                html += `<div class="card" style="width: 18rem;">   
                 <img src="${x.img}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${x.id}</h5>
@@ -70,7 +70,7 @@ function readData() {
             </div>`
             }
             html += '</div>'
-            document.getElementById("showdata").innerHTML = html
+            document.getElementById("showdata").innerHTML = html    //แล้วเอาข้อความที่เก็บเป็นคำสั่ง HTML เมื่อกี้มาสร้างเป็น HTML บนหน้าเว็บจริงตู้มเดียว
         })
 }
 
@@ -83,9 +83,9 @@ function loadBooking() {
             fetch(url + "/booking")
                 .then(response => response.json())
                 .then(bookingData => {
-                    for (const x of bookingData) {
-                        for (const y of locationData) {
-                            if (y['name'] == x['location']) {
+                    for (const x of bookingData) {  //Loop เพื่อไล่หาข้อมูลการจองของลูกค้าทุกคน
+                        for (const y of locationData) { //Loop เพื่อไล่หาข้อมูลสถานที่ที่มีบริการจองลานกางเต๊นท์ทั้งหมด
+                            if (y['name'] == x['location']) {   // แล้วกรองหาชื่อสถานที่ที่มีกับสถานที่ที่ผู้ใช้ได้จองเอาไว้ ถ้าตรงกันก็เอาข้อมูลทั้งหมดนั้นแหละมาใส่ใน HTML
                                 html += `
                                 <div class="col ">
                 <div class="card border-0" >
@@ -112,7 +112,7 @@ function loadBooking() {
                         }
                     }
 
-                    if (html == ``) {
+                    if (html == ``) {   //เขียนดักไว้เผื่อว่าไม่มีข้อมูลการจอง ผู้ใช้จะได้ไม่ต้องรออยู่หน้านั้นนาน ๆ
                         document.getElementById('booking1').innerHTML = `<h1><font color="white">No Booking Data</font></h1>`
                     } else {
                         document.getElementById('booking1').innerHTML = html
@@ -125,16 +125,16 @@ function loadBooking() {
 }
 
 
-function newTab(link) {
+function newTab(link) { //สร้างเผื่อเอาไว้ให้ฝั่ง HTML เรียกไปใช้มันจะได้อยู่ใน Session เดียวกัน
     window.open(link);
 }
 
-function viewBooking(id) {
+function viewBooking(id) { //Function ของปุ่ม View Booking ของหน้า My Booking ส่วน id ที่เป็น Parameter นั้นจะรับมาจาก HTML ใน Function loadBooking() ข้างบน
     fetch(url + '/booking')
         .then(response => response.json())
         .then(bookingData => {
             for (const x of bookingData) {
-                if (x['id'] == id) {
+                if (x['id'] == id) {    //ถ้า ID ที่เก็บไว้ใน JSON ตรงกับข้อมูลที่รับมาก็เรียก Sweet Alert แล้วแสดงข้อมูล
                     Swal.fire({
                         title: 'Booking Detail',
                         html:
@@ -172,7 +172,7 @@ function viewBooking(id) {
         })
 }
 
-function editBooking(id) {
+function editBooking(id) {  // Function ของปุ่มแก้ไขการจอง ซึ่งก็เอา id มาจาก Function loadbooking() เหมือนกัน
     var adult = ''
     var children = ''
     var firstname = ''
@@ -180,7 +180,7 @@ function editBooking(id) {
     var email = ''
     var phone = ''
 
-    fetch(url + `/booking/${id}`)
+    fetch(url + `/booking/${id}`)   // Function ข้างบนมันเขียนแบบนี้ได้ไหมก็ยังไม่เคยลอง
         .then(response => response.json())
         .then(bookingData => {
             Swal.fire({
@@ -220,13 +220,13 @@ function editBooking(id) {
                         email = document.getElementById('email').value,
                         phone = document.getElementById('phone').value,
 
-                        fetch(url + `/booking/${id}`, {
+                        fetch(url + `/booking/${id}`, { //ถ้าผู้ใช้กด OK มาก็จะเรียก Fetch อีกรอบมา Update ข้อมูล
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json'
                             },
                             body:
-                                JSON.stringify({
+                                JSON.stringify({    //การจะ Update ข้อมูลจะต้องส่งข้อมูลไปทุก Field ไม่งั้น Field ที่มีอยู่เดิมก่อนการ Update จะหายไป
                                     "id": id,
                                     "location": bookingData['location'],
                                     "check in": bookingData['check in'],
@@ -250,7 +250,7 @@ function editBooking(id) {
 
                     ],
                         Swal.fire('Saved!', '', 'success'),
-                        location.reload();
+                        location.reload(); // Reload หน้าเว็บ
                 }
             })
 
