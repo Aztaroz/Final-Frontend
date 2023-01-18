@@ -260,7 +260,7 @@ function editBooking(id) {  // Function ของปุ่มแก้ไขก�
         })
 }
 
-function deleteBooking(id) {
+function deleteBooking(id) { // ลบข้อมูลการจอง ซึ่งก็เอา id มาจาก Function loadbooking() เหมือนกัน
     console.log(id);
     Swal.fire({
         title: 'Are you sure?',
@@ -291,20 +291,20 @@ function deleteBooking(id) {
                 .then(response => response.json())
                 .then(data => console.log(data))
                 .catch(error => console.log(error))
-            location.reload();
+            location.reload();  // Reload หน้าเว็บ
 
         }
     })
 }
 
-function loadTable() {
+function loadTable() {  // Function ที่ใช้ในหน้าของ Admin
     fetch(url + '/booking')
         .then(response => response.json())
         .then(data => {
             console.log(data);
             var trHTML = '';
             var num = 1;
-            for (let object of data) {
+            for (let object of data) { // วน Loop เพื่ออ่านข้อมูลทั้งหมดที่มีของ Document Booking
                 trHTML += "<tr>";
                 trHTML += "<td>" + num + "</td>";
                 trHTML += "<td>" + object["location"] + "</td>";
@@ -330,14 +330,14 @@ function loadTable() {
         })
 }
 
-function selectOption(location_name, site_price, tent_price) {
+function selectOption(location_name, site_price, tent_price) { //Function แสดงหน้าต่างการจองและเลือก Option เสริมในหน้าของสถานที่แต่ละที่ รับ Parameters มาจาก ไฟล์ HTML
     var html = ''
-    var chkin = sessionStorage.getItem('chkin')
+    var chkin = sessionStorage.getItem('chkin') //เรียกข้อมูลที่เก็บไว้ใน Session มาใช้
     var chkout = sessionStorage.getItem('chkout')
     var adult = sessionStorage.getItem('adult')
     var children = sessionStorage.getItem('children')
 
-    function totalPrice(location_name, fname, lname, email, phone) {
+    function totalPrice(location_name, fname, lname, email, phone) {    // Function ที่ใช้แสดงหน้าต่างสรุปราคา ซึ่งรับ Parameters มาจาก Function selectOption อีกทีหนึ่ง
         var tentsite = parseInt(document.getElementById('tentsite').value)
         let timerInterval
         site_price = parseInt(site_price)
@@ -345,11 +345,11 @@ function selectOption(location_name, site_price, tent_price) {
 
         var totalPrice = 0
 
-        switch (location_name) {
+        switch (location_name) { //ใช้ Switch case เพื่อดูว่าผู้ใช้จองสถานที่ไหน เพราะว่าแต่ละสถานที่มี Option เสริมไม่เหมือนกัน
             case 'Camping is life':
                 var fishing = parseInt(document.getElementById('fishing').value)
                 totalPrice = site_price + fishing
-                Swal.fire({
+                Swal.fire({ // เรียกใช้ Sweet Alert แบบกำหนดเวลา
                     title: 'Confirmation Your Booking',
                     html:
                         `<div class="mb-3">
@@ -389,7 +389,7 @@ function selectOption(location_name, site_price, tent_price) {
                         Swal.fire({
                             title: 'Booking Complete!',
                             html: 'We will redirect you to "My booking" in <b></b> milliseconds.',
-                            timer: 3000,
+                            timer: 3000,    // กำหนดเวลา - วินาที
                             timerProgressBar: true,
                             icon: 'success',
                             confirmButtonText: 'Close',
@@ -405,7 +405,7 @@ function selectOption(location_name, site_price, tent_price) {
                             }
                         }).then((result) => {
                             /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
+                            if (result.dismiss === Swal.DismissReason.timer) {  //ถ้าครบเวลาก็จะบันทึกข้อมูล และพาไปหน้า My Booking
                                 return [
                                     fetch(url + '/booking', {
                                         method: 'POST',
@@ -436,8 +436,8 @@ function selectOption(location_name, site_price, tent_price) {
                                         .then(data => console.log(data))
                                         .catch(error => console.log(error))
                                 ],
-                                    window.open("booking.html")
-                            } else {
+                                    window.open("booking.html") //เปิดแท็ปใหม่ซึ่งพาไปหน้า My Booking
+                            } else { //แต่ถ้าผู้ใช้ปิดหน้าต่าง Sweet Alert ไปก่อนก็จะบันทึกข้อมูลอย่างเดียว และจะไม่พาผู้ใช้ไปหน้า My Booking
                                 return [
                                     fetch(url + '/booking', {
                                         method: 'POST',
@@ -550,7 +550,7 @@ function selectOption(location_name, site_price, tent_price) {
                                             "lastname": lname,
                                             "email": email,
                                             "phone": phone,
-                                            "tent": 'N/A',
+                                            "tent": 'N/A', // N/A (Not Available) = ไม่มีตัวเลือกนี้ให้เลือก
                                             "tent_amount": 'N/A',
                                             "fishing": 'N/A',
                                             "moo-gata": moo_gata,
@@ -747,7 +747,7 @@ function selectOption(location_name, site_price, tent_price) {
 
     // Select Option
     switch (location_name) {
-        case 'Camping is life': // selectOption('Camping is life','200')
+        case 'Camping is life': // selectOption('Camping is life','200')    <==== เรียก Function ในฝั่ง HTML พร้อมกำหนด Parameters แบบนี้
             html +=
                 `<div class="mb-3">
             <label class="form-label">Rent a tent site</label>
@@ -777,7 +777,7 @@ function selectOption(location_name, site_price, tent_price) {
             <input class="form-control" type="tel" placeholder="eg.0987654321" id="phone">
             </div>`
             break;
-        case 'Pha hee': // selectOption('Pha hee','900')
+        case 'Pha hee': // selectOption('Pha hee','900') <==== เรียก Function ในฝั่ง HTML พร้อมกำหนด Parameters  แบบนี้
             html +=
                 `<div class="mb-3">
                 <label class="form-label">Rent a tent site (Free Tent) + Shelter</label>
@@ -809,7 +809,7 @@ function selectOption(location_name, site_price, tent_price) {
                 </div>`
             break;
 
-        case 'Phu chee dao': // selectOption('Phu chee dao','250','500')
+        case 'Phu chee dao': // selectOption('Phu chee dao','250','500') <==== เรียก Function ในฝั่ง HTML พร้อมกำหนด Parameters แบบนี้
             html +=
                 `<div class="mb-3">
                 <label class="form-label">Rent a tent site</label>
@@ -859,7 +859,7 @@ function selectOption(location_name, site_price, tent_price) {
         html: html,
         showCancelButton: true,
         focusConfirm: false,
-        preConfirm: () => { //!fill all condition and change class name
+        preConfirm: () => {
 
             if (document.getElementById('fname').value != '' && document.getElementById('lname').value != '' && document.getElementById('email').value != '' && document.getElementById('phone').value != '') {
 
